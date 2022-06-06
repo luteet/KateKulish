@@ -1,0 +1,136 @@
+
+$main_font: 'Poppins';
+
+$accent: teal;
+
+$white: #FFFFFF;
+$black: #000000;
+
+$containerPadding: 15;
+
+$container: 1800 + ($containerPadding * 2);
+$containerMin: 1000 + ($containerPadding * 2);
+$containerLarge: 1000 + ($containerPadding * 2);
+
+:root {
+    --title-font: 'Noto Serif';
+    --main-font: 'Poppins';
+    
+    --accent: #4137D0;
+    --accent-dark: #2C22AF;
+
+    --dark: #393939;
+    --dark-2: #272727;
+
+    --gray: #7C6E6E;
+
+    --light: #F5F5F5;
+    --light-2: #E9E9E9;
+
+    --accent-shadow: 0px 12px 35px rgba(44, 35, 172, 0.55);
+
+    --white: #FFF;
+    --black: #000;
+
+    --white-0-5: rgba(255,255,255,0.5);
+    --black-0-5: rgba(0,0,0,0.5);
+
+    --container-padding: 15px;
+}
+
+
+
+@font-face {
+    @include font-include('Poppins', 400, swap, normal, 'Poppins-Regular');
+}
+
+@font-face {
+    @include font-include('Poppins', 500, swap, normal, 'Poppins-Medium');
+}
+
+@font-face {
+    @include font-include('Poppins', 600, swap, normal, 'Poppins-SemiBold');
+}
+
+@font-face {
+    @include font-include('Poppins', 700, swap, normal, 'Poppins-Bold');
+}
+
+@font-face {
+    @include font-include('Noto Serif', 400, swap, normal, 'NotoSerifDisplay-Regular');
+}
+
+@font-face {
+    @include font-include('Noto Serif', 700, swap, normal, 'NotoSerifDisplay-Bold');
+}
+
+@font-face {
+    font-family: 'Kate-Kulish-icons';
+    src:
+      url('Kate-Kulish-icons.ttf?ik5pdl') format('truetype'),
+      url('Kate-Kulish-icons.woff?ik5pdl') format('woff'),
+      url('Kate-Kulish-icons.svg?ik5pdl#Kate-Kulish-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="_icon-"], [class*=" _icon-"] {
+    font-family: 'Kate-Kulish-icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ._icon-arrow-to-right-v2::before {
+    content: "\e901";
+  }
+  ._icon-share::before {
+    content: "\e90d";
+  }
+  ._icon-arrow-to-right::before {
+    content: "\e900";
+  }
+  ._icon-call::before {
+    content: "\e902";
+  }
+  ._icon-cancel::before {
+    content: "\e903";
+  }
+  ._icon-check::before {
+    content: "\e904";
+  }
+  ._icon-love::before {
+    content: "\e905";
+  }
+  ._icon-love-active::before {
+    content: "\e906";
+  }
+  ._icon-menu::before {
+    content: "\e907";
+  }
+  ._icon-minus::before {
+    content: "\e908";
+  }
+  ._icon-more::before {
+    content: "\e909";
+  }
+  ._icon-play::before {
+    content: "\e90a";
+  }
+  ._icon-plus::before {
+    content: "\e90b";
+  }
+  ._icon-select-arrow::before {
+    content: "\e90c";
+  }
+  ._icon-shopping-bag::before {
+    content: "\e90e";
+  }
+  

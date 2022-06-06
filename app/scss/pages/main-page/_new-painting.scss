@@ -1,0 +1,149 @@
+.new-painting {
+
+    // .new-painting__container
+
+    &__container {
+    }
+
+    // .new-painting__section-title
+
+    &__section-title {
+    }
+
+    // .new-painting__picture
+
+    &__picture {
+        margin-top: 22px;
+        // .new-painting__picture--img
+
+        &--img {
+            width: 100%; height: auto;
+
+        }
+    }
+
+    // .new-painting__footer
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: 23px;
+
+        @include _768 {
+            padding-top: 48px;
+        }
+
+        @include _992 {
+            padding-top: 73px;
+        }
+
+        position: relative;
+
+        color: var(--dark);
+
+    }
+
+    // .new-painting__line
+
+    &__line {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 9px; width: 1px;
+        background: var(--dark);
+
+        top: 14px;
+        
+        @include _768 {
+            top: 25px;
+            height: 20px;
+        }
+
+        @include _992 {
+            top: 40px;
+        }
+    }
+
+    // .new-painting__name
+
+    &__name {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 125%;
+
+        flex-direction: column;
+        align-items: center;
+
+        @include _768 {
+            font-weight: 500;
+            font-size: 0.875rem;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        @include _992 {
+            font-size: 1.875rem;
+        }
+    }
+
+    // .new-painting__datetime
+
+    &__datetime {
+        font-weight: 400;
+        font-size: 0.875rem;
+        margin: 0 6px;
+
+        @include _768 {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        @include _992 {
+            font-size: 1.5625rem;
+        }
+    }
+
+    // .new-painting__price
+
+    &__price {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 100%;
+
+        margin-top: 3px;
+
+        @include _768 {
+            font-size: 1.5625rem;
+            margin-top: 12px;
+        }
+
+        @include _992 {
+            font-size: 2.5rem;
+        }
+    }
+
+    // .new-painting__btn
+
+    &__btn {
+        margin-top: 13px;
+
+        width: 100%; max-width: 120px;
+
+        padding: 13px;
+
+        @include _768 {
+            max-width: 134px;
+        }
+
+        @include _992 {
+            margin-top: 38px;
+            max-width: 216px;
+            padding: 20px;
+        }
+    }
+}
+

@@ -1,0 +1,23 @@
+@import 'mixin';
+@import 'null';
+@import 'libs';
+@import 'vars';
+@import 'global';
+@import 'font';
+@import 'slider';
+
+@import 'main-sections/header';
+
+
+@import 'pages/main-page/intro';
+@import 'pages/main-page/gallery';
+@import 'pages/main-page/new-painting';
+@import 'pages/main-page/philosophy';
+@import 'pages/main-page/nft-marketplace';
+@import 'pages/main-page/exhibitions';
+//@import 'pages/main-page';
+
+//@import 'pages/main-page';
+
+
+@import 'main-sections/footer';
