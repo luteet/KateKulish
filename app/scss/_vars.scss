@@ -10,7 +10,7 @@ $containerPadding: 15;
 
 $container: 1800 + ($containerPadding * 2);
 $containerMin: 1000 + ($containerPadding * 2);
-$containerLarge: 1000 + ($containerPadding * 2);
+$containerLarge: 1830 + ($containerPadding * 2);
 
 :root {
     --title-font: 'Noto Serif';
@@ -36,6 +36,11 @@ $containerLarge: 1000 + ($containerPadding * 2);
 
     --white-0-5: rgba(255,255,255,0.5);
     --black-0-5: rgba(0,0,0,0.5);
+
+    --green: #459254;
+    --green-light: #B5D3BB;
+    --red: #D43535;
+    --red-light: #EFB7B7;
 
     --container-padding: 15px;
 }

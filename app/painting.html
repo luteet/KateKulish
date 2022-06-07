@@ -1,0 +1,276 @@
+@@include("html/_header-page-address-v2.html", {
+    "link-1": 'Home',
+    "link-2": 'Gallery',
+    "link-3": 'Name of the painting'
+})
+
+<main class="main">
+    <section class="painting">
+        <div class="painting__container _container">
+            <div class="painting__block">
+                <div class="painting__block--header">
+                    <h2 class="painting__title _title">
+                        Oil painting by Kate Kulish “She is in unity with nature 2”
+                    </h2>
+                    <div class="painting__status">
+                        <div class="painting__status--item _type-1">
+                            Free shipping
+                        </div>
+                        <div class="painting__status--item _type-2">
+                            Only 1 available
+                        </div>
+                    </div>
+                </div>
+                <div class="painting__block--picture painting__picture">
+                    <div class="painting__picture-slider-main swiper">
+                        <div class="painting__picture-slider-main--rating rating-picture">
+                            <div class="rating-picture__status">
+                                <i class="rating-picture__status--like-icon _icon-love-active"></i>
+                                <span class="rating-picture__status--like-value">66</span>
+                            </div>
+                            <button type="button" class="rating-picture__like-btn _like-btn">
+                                <i class="rating-picture__like-btn--icon _icon-love _like-btn-icon"></i>
+                            </button>
+                        </div>
+                        <ul class="painting__picture-slider-main--list swiper-wrapper">
+                            <li class="painting__picture-slider-main--slide swiper-slide">
+                                <div class="painting__picture-slider-main--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-1.webp" type="image/webp">
+                                        <img src="img/painting/image-1.jpg" alt="" width="300" class="painting__picture-slider-main--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                            <li class="painting__picture-slider-main--slide swiper-slide">
+                                <div class="painting__picture-slider-main--slide-body">
+                                    <picture>
+                                        <source srcset="https://images.unsplash.com/photo-1654447398806-c5b4a7f39a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" type="image/webp">
+                                        <img src="img/painting/image-2.jpg" alt="" width="300" class="painting__picture-slider-main--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                            <li class="painting__picture-slider-main--slide swiper-slide">
+                                <div class="painting__picture-slider-main--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-3.webp" type="image/webp">
+                                        <img src="img/painting/image-3.jpg" alt="" width="300" class="painting__picture-slider-main--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                            <li class="painting__picture-slider-main--slide swiper-slide">
+                                <div class="painting__picture-slider-main--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-4.webp" type="image/webp">
+                                        <img src="img/painting/image-4.jpg" alt="" width="300" class="painting__picture-slider-main--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="painting__picture-slider-gallery swiper">
+                        <ul class="painting__picture-slider-gallery--list swiper-wrapper">
+                            <li class="painting__picture-slider-gallery--slide swiper-slide">
+                                <div class="painting__picture-slider-gallery--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-1-min.webp" type="image/webp">
+                                        <img src="img/painting/image-1-min.jpg" alt="" loading="lazy" width="300" class="painting__picture-slider-gallery--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                            <li class="painting__picture-slider-gallery--slide swiper-slide">
+                                <div class="painting__picture-slider-gallery--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-2-min.webp" type="image/webp">
+                                        <img src="img/painting/image-2-min.jpg" alt="" loading="lazy" width="300" class="painting__picture-slider-gallery--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                            <li class="painting__picture-slider-gallery--slide swiper-slide">
+                                <div class="painting__picture-slider-gallery--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-3-min.webp" type="image/webp">
+                                        <img src="img/painting/image-3-min.jpg" alt="" loading="lazy" width="300" class="painting__picture-slider-gallery--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                            <li class="painting__picture-slider-gallery--slide swiper-slide">
+                                <div class="painting__picture-slider-gallery--slide-body">
+                                    <picture>
+                                        <source srcset="img/painting/image-4-min.webp" type="image/webp">
+                                        <img src="img/painting/image-4-min.jpg" alt="" loading="lazy" width="300" class="painting__picture-slider-gallery--slide-img">
+                                    </picture>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="painting__picture-slider-main--navigation">
+                        <div class="painting__picture-slider-main--pagination _slider-alt-pagination swiper-pagination" id="painting-pagination"></div>
+                        <div class="painting__picture-slider-main--arrows">
+                            <button class="painting__picture-slider-main--arrow swiper-button-prev _prev _slider-alt-arrow" id="painting-arrow-prev"></button>
+                            <button class="painting__picture-slider-main--arrow swiper-button-next _next _slider-alt-arrow" id="painting-arrow-next"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="painting__block--info painting__info">
+                    <div class="painting__info--row">
+                        <div class="painting__info--col _auto">
+                            <strong class="painting__price">
+                                390.00 USD
+                            </strong>
+                        </div>
+                        <div class="painting__info--col _auto">
+                            <button class="painting__price-btn _btn">
+                                Buy it now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="painting__info--row">
+                        <div class="painting__info--col _min">
+                            <span class="painting__info--span">
+                                <i class="painting__info--check-icon _icon-check"></i>
+                                Shipping & returns
+                            </span>
+                        </div>
+                        <div class="painting__info--col _min">
+                            <span class="painting__info--span">
+                                <i class="painting__info--check-icon _icon-check"></i>
+                                Ready to ship in 1-3 business days
+                            </span>
+                        </div>
+                        <div class="painting__info--col _min">
+                            <span class="painting__info--span">
+                                <i class="painting__info--check-icon _icon-check"></i>
+                                From Ukraine
+                            </span>
+                        </div>
+                        <div class="painting__info--col _min">
+                            <span class="painting__info--span">
+                                <i class="painting__info--check-icon _icon-check"></i>
+                                You are fully protected by PayPal
+                            </span>
+                        </div>
+                    </div>
+                    <div class="painting__info--row">
+                        <div class="painting__info--col">
+                            <h3 class="painting__info--min-title">
+                                Categories:
+                            </h3>
+                            <div class="painting__info--min-text">
+                                2019 year, Animals, [:en] Abstract [:ru] Абстракция
+                            </div>
+                        </div>
+                        <div class="painting__info--col">
+                            <h3 class="painting__info--min-title">
+                                Categories:
+                            </h3>
+                            <div class="painting__info--min-text">
+                                Ready to ship in 1 - 3 business days
+                                From Ukraine
+                            </div>
+                        </div>
+                        <div class="painting__info--col _mob-auto">
+                            <h3 class="painting__info--min-title">
+                                Returns and exchanges accepted
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="painting__info--row">
+                        <div class="painting__info--col _auto payment-min">
+                            <h3 class="painting__info--min-title">
+                                Payment options:
+                            </h3>
+                            <ul class="payment-min__list">
+                                <li class="payment-min__item">
+                                    <picture>
+                                        <source srcset="img/payment/logo-1.webp" type="image/webp">
+                                        <img src="img/payment/logo-1.png" alt="" loading="lazy" width="65" class="payment-min__item--img">
+                                    </picture>
+                                </li>
+                                <li class="payment-min__item">
+                                    <picture>
+                                        <source srcset="img/payment/logo-2.webp" type="image/webp">
+                                        <img src="img/payment/logo-2.png" alt="" loading="lazy" width="65" class="payment-min__item--img">
+                                    </picture>
+                                </li>
+                                <li class="payment-min__item">
+                                    <picture>
+                                        <source srcset="img/payment/logo-3.webp" type="image/webp">
+                                        <img src="img/payment/logo-3.png" alt="" loading="lazy" width="65" class="payment-min__item--img">
+                                    </picture>
+                                </li>
+                                <li class="payment-min__item">
+                                    <picture>
+                                        <source srcset="img/payment/logo-4.webp" type="image/webp">
+                                        <img src="img/payment/logo-4.png" alt="" loading="lazy" width="65" class="payment-min__item--img">
+                                    </picture>
+                                </li>
+                                <li class="payment-min__item">
+                                    <picture>
+                                        <source srcset="img/payment/logo-5.webp" type="image/webp">
+                                        <img src="img/payment/logo-5.png" alt="" loading="lazy" width="65" class="payment-min__item--img">
+                                    </picture>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="painting__descr">
+                <h2 class="painting__descr--title _title _min">
+                    Name of the painting
+                </h2>
+                <div class="painting__descr--text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    </p>
+                    <p>
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    </p>
+                    <p>
+                        Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+                    </p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                    </ul>
+                </div>
+            </div>
+            @@include("html/_share-block.html", {
+                "class": 'painting__share-block',
+            })
+        </div>
+    </section>
+    <section class="related-paintings">
+        <div class="related-paintings__container _container">
+            <h2 class="related-paintings__title _title _large">
+                Related painting
+            </h2>
+            <div class="related-paintings__block">
+                <div class="related-paintings__slider swiper">
+                    <ul class="related-paintings__slider--list swiper-wrapper">
+                        @@loop("html/gallery/_gallery-card.html", [
+    
+                            {"image": '1', "class": 'related-paintings__slider--card swiper-slide'},
+                            {"image": '2', "class": 'related-paintings__slider--card swiper-slide'},
+                            {"image": '3', "class": 'related-paintings__slider--card swiper-slide'},
+                            {"image": '4', "class": 'related-paintings__slider--card swiper-slide'},
+    
+                            {"image": '1', "class": 'related-paintings__slider--card swiper-slide'},
+                            {"image": '2', "class": 'related-paintings__slider--card swiper-slide'},
+                            {"image": '3', "class": 'related-paintings__slider--card swiper-slide'},
+                            {"image": '4', "class": 'related-paintings__slider--card swiper-slide'},
+    
+                        ])
+                    </ul>
+                </div>
+                <div class="related-paintings__slider--navigation">
+                    <button class="related-paintings__slider--arrow swiper-button-prev _slider-round-arrow-btn _prev" id="related-paintings-arrow-prev"></button>
+                    <button class="related-paintings__slider--arrow swiper-button-next _slider-round-arrow-btn _next" id="related-paintings-arrow-next"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

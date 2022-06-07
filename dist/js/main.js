@@ -113,10 +113,9 @@ let nftMarketplaceSlider = new Swiper('.nft-marketplace__slider', {
 
 let nftMarketplaceSliderNavigation = document.querySelector('.nft-marketplace__navigation');
 
-if(!document.querySelector('.nft-marketplace__list').querySelectorAll('.nft-marketplace__item').length) {
+if(!document.querySelector('.nft-marketplace__item') && nftMarketplaceSliderNavigation) {
   nftMarketplaceSliderNavigation.classList.add('_disabled');
 }
-
 
 let exhibitionsSlider = new Swiper('.exhibitions__slider', {
     
@@ -144,6 +143,62 @@ let exhibitionsSlider = new Swiper('.exhibitions__slider', {
 });
 
 
+
+
+let paintingSliderGallery = new Swiper('.painting__picture-slider-gallery', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  
+  breakpoints: {
+    768: {
+      direction: "vertical",
+      slidesPerView: 4,
+      spaceBetween: 0,
+    }
+  }
+  
+});
+
+
+
+
+let paintingSliderMain = new Swiper('.painting__picture-slider-main', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  effect: "fade",
+  autoHeight: true,
+  navigation: {
+    nextEl: '.swiper-button-next#painting-arrow-next',
+    prevEl: '.swiper-button-prev#painting-arrow-prev',
+},
+  pagination: {
+    el: '.swiper-pagination#painting-pagination',
+    clickable: true,
+  },
+  thumbs: {
+    swiper: paintingSliderGallery,
+  }
+});
+
+let relatedPaintingsSlider = new Swiper('.related-paintings__slider', {
+  spaceBetween: 20,
+  slidesPerView: 1,
+  navigation: {
+      nextEl: '.swiper-button-next#related-paintings-arrow-next',
+      prevEl: '.swiper-button-prev#related-paintings-arrow-prev',
+  },
+  breakpoints: {
+    500: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1250: {
+      slidesPerView: 4
+    }
+  }
+})
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 

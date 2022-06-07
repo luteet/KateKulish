@@ -1,17 +1,17 @@
 html, body {
     font-size: 16px;
 }
+
 html {
     height: 100%;
-  }
+}
+
 body {
 
     font-family: var(--main-font);
     
     font-weight: 400;
     line-height: 150%;
-
-    
 
     min-height: 100%;
 
@@ -142,13 +142,22 @@ body {
 ._btn {
     display: inline-block;
     
-    padding: 20px 15px;
+    padding: 10px;
+
+    @include _768 {
+        padding: 10px;
+        font-size: 1.25rem;
+    }
+    
+    @include _992 {
+        padding: 20px 15px;
+    }
 
     background: var(--accent);
     color: var(--white);
 
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 150%;
 
     text-align: center;
@@ -508,6 +517,224 @@ body {
     }
 }
 
+.gallery-card {
+
+    // .gallery-card__body
+
+    &__body {
+        position: relative;
+    }
+
+    // .gallery-card__header
+
+    &__header {
+        z-index: 2;
+    }
+
+    // .gallery-card__picture
+
+    &__picture {
+        display: block;
+        width: 100%; padding-top: 100%;
+        position: relative;
+    }
+
+    // .gallery-card__img
+
+    &__img {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
+
+    // .gallery-card__info
+
+    &__info {
+        color: var(--dark-3);
+        padding-top: 14px;
+        // .gallery-card__info--row
+
+        &--row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            padding: 2px 0;
+        }
+    }
+
+    // .gallery-card__name
+
+    &__name {
+        font-weight: 600;
+        line-height: 162%;
+
+        padding-right: 5px;
+    }
+
+    // .gallery-card__price
+
+    &__price {
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 140%;
+    }
+
+    // .gallery-card__info-row
+
+    &__info-row {
+    }
+
+    // .gallery-card__date
+
+    &__date {
+        font-size: 0.8125rem;
+    }
+
+    // .gallery-card__size
+
+    &__size {
+        font-size: 0.875rem;
+        line-height: 157%;
+    }
+
+    // .gallery-card__btn
+
+    &__btn {
+        margin-top: 6px;
+        width: 100%;
+        // .gallery-card__btn--icon
+
+        &--icon {
+        }
+    }
+}
+
+.payment-min {
+    width: 100%;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: -3px;
+        padding-top: 9px;
+    }
+
+    &__item {
+        flex: 0 1 71px;
+        padding: 5px 0px;
+        margin: 3px;
+
+        border-radius: 5px;
+
+        background: var(--light);
+
+        text-align: center;
+
+        &--img {
+            max-width: 100%;
+        }
+    }
+}
+
+.related-paintings {
+    padding-top: 40px;
+
+    @include _768 {
+        padding-top: 75px;
+    }
+    
+    @include _992 {
+        padding-top: 100px;
+    }
+    // .related-paintings__container
+
+    &__container {
+    }
+
+    // .related-paintings__title
+
+    &__title {
+    }
+
+    // .related-paintings__block
+
+    &__block {
+        margin-top: 18px;
+
+        @include _768 {
+            margin-top: 34px;
+        }
+        
+        @include _992 {
+            margin-top: 46px;
+        }
+
+        position: relative;
+    }
+
+    // .related-paintings__slider
+
+    &__slider {
+        padding-bottom: 40px;
+
+        @include _768 {
+            padding-bottom: 60px;
+        }
+        
+        @include _992 {
+            
+            padding-bottom: 100px;
+        }
+        // .related-paintings__slider--list
+
+        &--list {
+        }
+
+        // .related-paintings__slider--navigation
+
+        &--navigation {
+        }
+
+        // .related-paintings__slider--arrow
+
+        &--arrow {
+            
+            top: 37%;
+
+            @include _768 {
+                top: 35%;
+            }
+
+            @include _992 {
+                top: 42%;
+            }
+
+            &._prev {
+                left: 0;
+                transform: translate(0%,-50%);
+            }
+            &._next {
+                right: 0;
+                transform: translate(0%,-50%);
+            }
+
+            @media(min-width: #{$container + 70}px) {
+                top: 42%;
+                &._prev {
+                    left: 0;
+                    transform: translate(-50%,-50%);
+                }
+                &._next {
+                    right: 0;
+                    transform: translate(50%,-50%);
+                }
+            }
+        }
+    }
+}
 
 
 
