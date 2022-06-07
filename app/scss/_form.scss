@@ -1,0 +1,83 @@
+._select {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+
+    border: 1px solid var(--dark);
+
+    padding: 14px 40px 14px 20px;
+
+    font-size: 0.875rem;
+    line-height: 150%;
+
+    color: var(--dark);
+    background: transparent;
+
+    width: 100%;
+
+    cursor: pointer;
+}
+
+._select-min {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+
+    min-width: 36px;
+    padding: 3px;
+
+    background: transparent;
+    
+    cursor: pointer;
+}
+
+._select-elem {
+    position: relative;
+    display: inline-flex;
+    min-width: 36px;
+}
+
+._select-arrow-icon {
+    position: absolute;
+    right: 20px; top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+
+    font-size: 0.625rem;
+}
+
+._select-min-arrow-icon {
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+
+    font-size: 0.625rem;
+}
+
+._input {
+
+    border: 1px solid var(--dark);
+
+    padding: 13px 20px;
+    &._min {
+        padding: 11px 3px;
+
+        @include _768 {
+            padding: 8px 5px;
+        }
+        
+        @include _992 {
+            padding: 11px 5px;
+        }
+    }
+
+    font-size: 1.125rem;
+    line-height: 156%;
+
+    max-width: 100%;
+    width: 100%;
+
+    
+    
+}

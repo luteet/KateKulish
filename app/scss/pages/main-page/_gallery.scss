@@ -119,24 +119,7 @@
 
         &--like-status {
             
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(6px);
-
-            font-size: 0.875rem;
-            @include _768 {
-                font-size: 1.35rem;
-                padding: 15px 20px;
-            }
-            line-height: 100%;
-            color: var(--white);
-
-            display: flex;
-            align-items: center;
-
-            padding: 10px 15px;
-
-            border-radius: 150px;
+            
         }
 
         // .gallery__item--like-icon
@@ -148,44 +131,15 @@
         // .gallery__item--like-value
 
         &--like-value {
-            margin-left: 6px;
-            text-shadow: 0 0 1px rgba(0,0,0,1);
+            
         }
 
         &--like-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(6px);
-
-            font-size: 1rem;
-            line-height: 100%;
-            color: var(--white);
-
-            width: 37px; height: 37px;
-            @include _768 {
-                font-size: 1.5rem;
-                width: 50px; height: 50px;
-            }
-
-            border-radius: 50%;
+            
         }
 
         &--header {
-            position: absolute;
-            left: 0; top: 0;
-
-            width: 100%;
-            padding: 7px;
-            @include _768 {
-                padding: 20px 18px;
-            }
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            
         }
 
         // .gallery__item--image

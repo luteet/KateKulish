@@ -7,7 +7,7 @@
         grid-area: 1/1;
         position: relative;
 
-        padding-top: 200%;
+        padding-top: 175%;
 
         margin-top: -5vw;
         @media(min-width: 500px) {
@@ -16,12 +16,13 @@
         }
 
         @include _768 {
-            margin-top: -30vw;
+            margin-top: -33vw;
+            padding-top: 125%;
         }
 
-        @media(min-width: 1350px) {
-            margin-top: -20vw;
-            padding-top: 90%;
+        @media(min-width: 1250px) {
+            margin-top: -23vw;
+            padding-top: 80%;
         }
 
         @media(min-width: 1700px) {
@@ -51,11 +52,10 @@
         grid-area: 1/1;
         padding-top: 20vw;
         @media(min-width: 500px) {
-            padding-top: 100px;
-        }
-        @include _992 {
             padding-top: 150px;
         }
+        
+        
         width: 100%;
     }
 
@@ -67,7 +67,7 @@
     }
 
     &__info {
-        @media(min-width: 1350px) {
+        @media(min-width: 1250px) {
             display: grid;
             grid-template-columns: 100%;
 
@@ -92,7 +92,7 @@
             font-size: 1.25rem;
         }
         
-        @media(min-width: 1350px) {
+        @media(min-width: 1250px) {
             grid-area: 1/1;
             max-width: 75%;
             justify-self: end;

@@ -177,7 +177,7 @@ function resizeCheckFunc(size, minWidth, maxWidth) {
 
 
 
-function resize() {
+/* function resize() {
 
   windowSize = window.innerWidth;
 
@@ -198,4 +198,4 @@ function resize() {
 
 resize();
 
-window.onresize = resize;
+window.onresize = resize; */

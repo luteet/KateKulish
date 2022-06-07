@@ -1,0 +1,185 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'Gallery',
+})
+
+<main class="main">
+    <section class="gallery-page page-section">
+        <div class="gallery-page__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/gallery/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/gallery/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/gallery/header-bg-mob.webp" type="image/webp">
+                    <img src="img/gallery/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <h1 class="page-section__header--main-title _page-title">
+                Gallery
+            </h1>
+        </div>
+        <div class="gallery-page__content">
+            <div class="gallery-page__content--container _container">
+                <form action="#" class="gallery-page__content--filter gallery-page__filter">
+                    <fieldset class="gallery-page__filter--fieldset">
+                        <legend class="gallery-page__filter--legend">
+                            Product categories
+                        </legend>
+                        <div class="gallery-page__filter--row">
+                            <div class="gallery-page__filter--select-elem _select-elem">
+                                <select name="category" class="gallery-page__filter--select _select">
+                                    <option value="none" selected disabled>
+                                        Select a category
+                                    </option>
+                                    <option value="param-1">
+                                        param-1
+                                    </option>
+                                    <option value="param-2">
+                                        param-2
+                                    </option>
+                                    <option value="param-3">
+                                        param-3
+                                    </option>
+                                </select>
+                                <i class="gallery-page__filter--select-arrow-icon _select-arrow-icon _icon-select-arrow"></i>
+                            </div>
+                            <div class="gallery-page__filter--select-elem _select-elem">
+                                <select name="year" class="gallery-page__filter--select _select">
+                                    <option value="none" selected disabled>
+                                        Year
+                                    </option>
+                                    <option value="2020">
+                                        2020
+                                    </option>
+                                    <option value="2021">
+                                        2021
+                                    </option>
+                                    <option value="2022">
+                                        2022
+                                    </option>
+                                </select>
+                                <i class="gallery-page__filter--select-arrow-icon _select-arrow-icon _icon-select-arrow"></i>
+                            </div>
+                            <div class="gallery-page__filter--select-elem _select-elem">
+                                <select name="size" class="gallery-page__filter--select _select">
+                                    <option value="none" selected disabled>
+                                        Size
+                                    </option>
+                                    <option value="size-1">
+                                        40x50
+                                    </option>
+                                    <option value="size-2">
+                                        50x60
+                                    </option>
+                                    <option value="size-3">
+                                        60x70
+                                    </option>
+                                </select>
+                                <i class="gallery-page__filter--select-arrow-icon _select-arrow-icon _icon-select-arrow"></i>
+                            </div>
+                            <div class="gallery-page__filter--item">
+                                <div class="gallery-page__filter--price">
+                                    <div class="gallery-page__filter--price-elem">
+                                        <b class="gallery-page__filter--price-name">from</b>
+                                        <input type="number" name="price-from" value="150" class="gallery-page__filter--price-input _input _min">
+                                        <div class="gallery-page__filter--price-select-elem _select-elem">
+                                            <select name="price-from-currency" class="gallery-page__filter--price-currency _select-min">
+                                                <option value="$">$</option>
+                                                <option value="€">€</option>
+                                                <option value="₴">₴</option>
+                                            </select>
+                                            <i class="gallery-page__filter--price-select-arrow-icon _select-min-arrow-icon _icon-select-arrow"></i>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="gallery-page__filter--price-elem">
+                                        <b class="gallery-page__filter--price-name">to</b>
+                                        <input type="number" name="price-to" value="150" class="gallery-page__filter--price-input _input _min">
+                                        <div class="gallery-page__filter--price-select-elem _select-elem">
+                                            <select name="price-to-currency" class="gallery-page__filter--price-currency _select-min">
+                                                <option value="$">$</option>
+                                                <option value="€">€</option>
+                                                <option value="₴">₴</option>
+                                            </select>
+                                            <i class="gallery-page__filter--price-select-arrow-icon _select-min-arrow-icon _icon-select-arrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-page__filter--result">
+                            Showing 1-100 of 107 results
+                        </div>
+                    </fieldset>
+                </form>
+                <ul class="gallery-page__content--list gallery-page__list">
+                    @@loop("html/gallery/_gallery-card.html", [
+
+                        {"image": '1'},
+                        {"image": '2'},
+                        {"image": '3'},
+                        {"image": '4'},
+
+                        {"image": '3'},
+                        {"image": '4'},
+                        {"image": '1'},
+                        {"image": '2'},
+
+                        {"image": '1'},
+                        {"image": '2'},
+                        {"image": '3'},
+                        {"image": '4'},
+
+                        {"image": '3'},
+                        {"image": '4'},
+                        {"image": '1'},
+                        {"image": '2'},
+
+                    ])
+                </ul>
+                <div class="gallery-page__content--pagination page-section__pagination">
+                    <div class="page-section__pagination--body">
+                        <a href="#" class="page-section__pagination--arrow-link _round-arrow-btn _large _prev">
+                            <i class="page-section__pagination--arrow-icon _round-arrow-btn-icon _icon-arrow-to-right"></i>
+                        </a>
+                        <ul class="page-section__pagination--list">
+                            <li class="page-section__pagination--item">
+                                <a href="#" class="page-section__pagination--link _current">
+                                    1
+                                </a>
+                            </li>
+                            <li class="page-section__pagination--item">
+                                <a href="#" class="page-section__pagination--link">
+                                    2
+                                </a>
+                            </li>
+                            <li class="page-section__pagination--item">
+                                <a href="#" class="page-section__pagination--link">
+                                    3
+                                </a>
+                            </li>
+                            <li class="page-section__pagination--item">
+                                <span class="page-section__pagination--etc">
+                                    ...
+                                </span>
+                            </li>
+                            <li class="page-section__pagination--item">
+                                <a href="#" class="page-section__pagination--link">
+                                    12
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="page-section__pagination--arrow-link _round-arrow-btn _large _next">
+                            <i class="page-section__pagination--arrow-icon _round-arrow-btn-icon _icon-arrow-to-right"></i>
+                        </a>
+                    </div>
+                </div>
+                @@include("html/_share-block.html", {
+                    "class": 'gallery-page__content--share-block',
+                })
+            </div>        
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")
