@@ -2383,9 +2383,9 @@ body._popup-active {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  overflow: auto;
   opacity: 0;
   visibility: hidden;
+  will-change: opacity;
   -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
@@ -2418,6 +2418,8 @@ body._popup-active {
       -ms-flex-direction: column;
           flex-direction: column;
   background: white;
+  overflow: auto;
+  height: 100vh;
   width: 75vw;
   min-height: 100%;
   padding: 10px 0;
@@ -4020,6 +4022,8 @@ body._popup-active {
         -ms-flex-direction: row;
             flex-direction: row;
     width: auto;
+    height: auto;
+    overflow: visible;
     background: transparent;
   }
 
