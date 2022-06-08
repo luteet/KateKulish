@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="SHORTCUT ICON" href="img/logo.svg" type="image/svg"> -->
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="offset-check-js"></div>
+        <header class="header">
+            <div class="header__row">
+                <div class="header__container _container">
+                    <a href="index.html" class="header__logo">
+                        <img src="img/logo.svg" alt="" width="283" height="40" class="header__logo--img">
+                    </a>
+                    <nav class="header__nav">
+                        <div class="header__nav--body">
+                            <div class="header__nav--header">
+                                <h3 class="header__nav--title">
+                                    Menu
+                                </h3>
+                                <button class="header__nav--close _nav-close" type="button">
+                                    <i class="header__nav--close-icon _icon-cancel"></i>
+                                </button>
+                            </div>
+                            <ul class="header__nav--list">
+                                <li class="header__nav--item">
+                                    <a href="index.html" class="header__nav--link">
+                                        Main
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="gallery.html" class="header__nav--link">
+                                        Gallery
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="exhibitions.html" class="header__nav--link">
+                                        Exhibitions
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="bio.html" class="header__nav--link">
+                                        Bio
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="faq.html" class="header__nav--link">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="contacts.html" class="header__nav--link">
+                                        Contacts
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="auction.html" class="header__nav--link">
+                                        Auction
+                                    </a>
+                                </li>
+                                <li class="header__nav--item">
+                                    <a href="nft.html" class="header__nav--link">
+                                        NFT
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="header__nav--social">
+                                <ul class="header__nav--social-list">
+                                    <li class="header__nav--social-item">
+                                        <a href="#" class="header__nav--social-link _alt _icon-love" title="Like">
+                                        </a>
+                                    </li>
+                                    <li class="header__nav--social-item _line-item">
+                                        <span class="header__nav--social-line"></span>
+                                    </li>
+                                    <li class="header__nav--social-item">
+                                        <a href="#" class="header__nav--social-link" title="Facebook" style="--hover-bg: #3B5998">
+                                            <svg width="22" height="22" viewBox="0 0 22 22">
+                                                <path d="M14.6644 3.65292H16.6728V0.154917C16.3263 0.10725 15.1346 0 13.7468 0C10.851 0 8.86738 1.82142 8.86738 5.16908V8.25H5.67188V12.1605H8.86738V22H12.7852V12.1614H15.8515L16.3382 8.25092H12.7843V5.55683C12.7852 4.42658 13.0895 3.65292 14.6644 3.65292Z" fill="white"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="header__nav--social-item">
+                                        <a href="#" class="header__nav--social-link" title="Tik-Tok" style="--hover-bg: #000000">
+                                            <svg width="20" height="20" viewBox="0 0 20 20">
+                                                <path d="M18.7626 5.01513C17.6212 5.01513 16.5681 4.63701 15.7224 3.99912C14.7524 3.26787 14.0556 2.19521 13.8095 0.958886C13.7485 0.653418 13.7157 0.338183 13.7126 0.0151367H10.452V8.92451L10.4481 13.8046C10.4481 15.1093 9.59853 16.2155 8.42079 16.6046C8.079 16.7175 7.70986 16.771 7.32548 16.7499C6.83486 16.7229 6.37509 16.5749 5.97548 16.3358C5.12509 15.8272 4.54853 14.9046 4.5329 13.8491C4.50829 12.1995 5.84189 10.8546 7.49033 10.8546C7.81572 10.8546 8.12822 10.9077 8.42079 11.0042V8.56904V7.69365C8.1122 7.64794 7.79814 7.62412 7.48056 7.62412C5.67626 7.62412 3.98876 8.37412 2.78251 9.72529C1.87079 10.7464 1.32392 12.0491 1.23954 13.4151C1.129 15.2097 1.78564 16.9155 3.05907 18.1741C3.24618 18.3589 3.44267 18.5304 3.64814 18.6886C4.73993 19.5288 6.0747 19.9843 7.48056 19.9843C7.79814 19.9843 8.1122 19.9608 8.42079 19.9151C9.73408 19.7206 10.9458 19.1194 11.902 18.1741C13.077 17.0128 13.7263 15.471 13.7333 13.83L13.7165 6.54248C14.277 6.9749 14.8899 7.33271 15.5477 7.61045C16.5708 8.04209 17.6556 8.26084 18.772 8.26044V5.89287V5.01435C18.7727 5.01513 18.7634 5.01513 18.7626 5.01513Z" fill="white"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="header__nav--social-item">
+                                        <a href="#" class="header__nav--social-link" title="Instagram" style="--hover-bg: #C44993">
+                                            <svg width="20" height="20" viewBox="0 0 20 20">
+                                                <path d="M14.5862 0H5.41381C2.42858 0 0 2.42858 0 5.41381V14.5863C0 17.5714 2.42858 20 5.41381 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41381C20 2.42858 17.5714 0 14.5862 0V0ZM9.99998 15.4686C6.98454 15.4686 4.53139 13.0154 4.53139 9.99998C4.53139 6.98454 6.98454 4.53139 9.99998 4.53139C13.0154 4.53139 15.4686 6.98454 15.4686 9.99998C15.4686 13.0154 13.0154 15.4686 9.99998 15.4686ZM15.5993 5.82106C14.7082 5.82106 13.9834 5.09627 13.9834 4.20516C13.9834 3.31405 14.7082 2.58911 15.5993 2.58911C16.4904 2.58911 17.2154 3.31405 17.2154 4.20516C17.2154 5.09627 16.4904 5.82106 15.5993 5.82106Z" fill="white"/>
+                                                <path d="M9.99923 5.70312C7.63046 5.70312 5.70312 7.63031 5.70312 9.99923C5.70312 12.368 7.63046 14.2953 9.99923 14.2953C12.3682 14.2953 14.2953 12.368 14.2953 9.99923C14.2953 7.63031 12.3682 5.70312 9.99923 5.70312Z" fill="white"/>
+                                                <path d="M15.5997 3.76172C15.3552 3.76172 15.1562 3.96069 15.1562 4.20514C15.1562 4.44958 15.3552 4.64856 15.5997 4.64856C15.8443 4.64856 16.0432 4.44974 16.0432 4.20514C16.0432 3.96054 15.8443 3.76172 15.5997 3.76172Z" fill="white"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="header__nav--social-item">
+                                        <a href="#" class="header__nav--social-link" title="YouTube" style="--hover-bg: #FF0000">
+                                            <svg width="26" height="26" viewBox="0 0 26 26">
+                                                <path d="M24.6725 6.90778C24.3917 5.86354 23.5683 5.04038 22.5243 4.7592C20.6168 4.2373 12.987 4.2373 12.987 4.2373C12.987 4.2373 5.35747 4.2373 3.45005 4.73941C2.42604 5.0203 1.58265 5.86369 1.30177 6.90778C0.799805 8.81505 0.799805 12.7705 0.799805 12.7705C0.799805 12.7705 0.799805 16.7458 1.30177 18.6332C1.58295 19.6773 2.40596 20.5004 3.4502 20.7816C5.37755 21.3036 12.9873 21.3036 12.9873 21.3036C12.9873 21.3036 20.6168 21.3036 22.5243 20.8015C23.5685 20.5205 24.3917 19.6973 24.6728 18.6532C25.1746 16.7458 25.1746 12.7906 25.1746 12.7906C25.1746 12.7906 25.1947 8.81505 24.6725 6.90778ZM10.5578 16.4246V9.11631L16.9024 12.7705L10.5578 16.4246Z" fill="white"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header__nav--bg _nav-close"></div>
+                    </nav>
+                    <div class="header__social">
+                        <ul class="header__nav--social-list">
+                            <li class="header__nav--social-item">
+                                <a href="#" class="header__nav--social-link _alt _icon-love" title="Like">
+                                </a>
+                            </li>
+                            <li class="header__nav--social-item">
+                                <span class="header__nav--social-line"></span>
+                            </li>
+                            <li class="header__nav--social-item">
+                                <a href="#" class="header__nav--social-link" title="Facebook" style="--hover-bg: #3B5998">
+                                    <svg width="22" height="22" viewBox="0 0 22 22">
+                                        <path d="M14.6644 3.65292H16.6728V0.154917C16.3263 0.10725 15.1346 0 13.7468 0C10.851 0 8.86738 1.82142 8.86738 5.16908V8.25H5.67188V12.1605H8.86738V22H12.7852V12.1614H15.8515L16.3382 8.25092H12.7843V5.55683C12.7852 4.42658 13.0895 3.65292 14.6644 3.65292Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="header__nav--social-item">
+                                <a href="#" class="header__nav--social-link" title="Tik-Tok" style="--hover-bg: #000000">
+                                    <svg width="20" height="20" viewBox="0 0 20 20">
+                                        <path d="M18.7626 5.01513C17.6212 5.01513 16.5681 4.63701 15.7224 3.99912C14.7524 3.26787 14.0556 2.19521 13.8095 0.958886C13.7485 0.653418 13.7157 0.338183 13.7126 0.0151367H10.452V8.92451L10.4481 13.8046C10.4481 15.1093 9.59853 16.2155 8.42079 16.6046C8.079 16.7175 7.70986 16.771 7.32548 16.7499C6.83486 16.7229 6.37509 16.5749 5.97548 16.3358C5.12509 15.8272 4.54853 14.9046 4.5329 13.8491C4.50829 12.1995 5.84189 10.8546 7.49033 10.8546C7.81572 10.8546 8.12822 10.9077 8.42079 11.0042V8.56904V7.69365C8.1122 7.64794 7.79814 7.62412 7.48056 7.62412C5.67626 7.62412 3.98876 8.37412 2.78251 9.72529C1.87079 10.7464 1.32392 12.0491 1.23954 13.4151C1.129 15.2097 1.78564 16.9155 3.05907 18.1741C3.24618 18.3589 3.44267 18.5304 3.64814 18.6886C4.73993 19.5288 6.0747 19.9843 7.48056 19.9843C7.79814 19.9843 8.1122 19.9608 8.42079 19.9151C9.73408 19.7206 10.9458 19.1194 11.902 18.1741C13.077 17.0128 13.7263 15.471 13.7333 13.83L13.7165 6.54248C14.277 6.9749 14.8899 7.33271 15.5477 7.61045C16.5708 8.04209 17.6556 8.26084 18.772 8.26044V5.89287V5.01435C18.7727 5.01513 18.7634 5.01513 18.7626 5.01513Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="header__nav--social-item">
+                                <a href="#" class="header__nav--social-link" title="Instagram" style="--hover-bg: #C44993">
+                                    <svg width="20" height="20" viewBox="0 0 20 20">
+                                        <path d="M14.5862 0H5.41381C2.42858 0 0 2.42858 0 5.41381V14.5863C0 17.5714 2.42858 20 5.41381 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41381C20 2.42858 17.5714 0 14.5862 0V0ZM9.99998 15.4686C6.98454 15.4686 4.53139 13.0154 4.53139 9.99998C4.53139 6.98454 6.98454 4.53139 9.99998 4.53139C13.0154 4.53139 15.4686 6.98454 15.4686 9.99998C15.4686 13.0154 13.0154 15.4686 9.99998 15.4686ZM15.5993 5.82106C14.7082 5.82106 13.9834 5.09627 13.9834 4.20516C13.9834 3.31405 14.7082 2.58911 15.5993 2.58911C16.4904 2.58911 17.2154 3.31405 17.2154 4.20516C17.2154 5.09627 16.4904 5.82106 15.5993 5.82106Z" fill="white"/>
+                                        <path d="M9.99923 5.70312C7.63046 5.70312 5.70312 7.63031 5.70312 9.99923C5.70312 12.368 7.63046 14.2953 9.99923 14.2953C12.3682 14.2953 14.2953 12.368 14.2953 9.99923C14.2953 7.63031 12.3682 5.70312 9.99923 5.70312Z" fill="white"/>
+                                        <path d="M15.5997 3.76172C15.3552 3.76172 15.1562 3.96069 15.1562 4.20514C15.1562 4.44958 15.3552 4.64856 15.5997 4.64856C15.8443 4.64856 16.0432 4.44974 16.0432 4.20514C16.0432 3.96054 15.8443 3.76172 15.5997 3.76172Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="header__nav--social-item">
+                                <a href="#" class="header__nav--social-link" title="YouTube" style="--hover-bg: #FF0000">
+                                    <svg width="26" height="26" viewBox="0 0 26 26">
+                                        <path d="M24.6725 6.90778C24.3917 5.86354 23.5683 5.04038 22.5243 4.7592C20.6168 4.2373 12.987 4.2373 12.987 4.2373C12.987 4.2373 5.35747 4.2373 3.45005 4.73941C2.42604 5.0203 1.58265 5.86369 1.30177 6.90778C0.799805 8.81505 0.799805 12.7705 0.799805 12.7705C0.799805 12.7705 0.799805 16.7458 1.30177 18.6332C1.58295 19.6773 2.40596 20.5004 3.4502 20.7816C5.37755 21.3036 12.9873 21.3036 12.9873 21.3036C12.9873 21.3036 20.6168 21.3036 22.5243 20.8015C23.5685 20.5205 24.3917 19.6973 24.6728 18.6532C25.1746 16.7458 25.1746 12.7906 25.1746 12.7906C25.1746 12.7906 25.1947 8.81505 24.6725 6.90778ZM10.5578 16.4246V9.11631L16.9024 12.7705L10.5578 16.4246Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="header__burger _burger" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="header__row _hidden-row">
+                <div class="header__page-address">
+                    <div class="header__page-address--container _container">
+                        <ul class="header__page-address--list">
+                            <li class="header__page-address--item">
+                                <a href="#" class="header__page-address--link">
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="header__page-address--item">
+                                <a href="#" class="header__page-address--link">
+                                    <span>Exhibitions</span>
+                                </a>
+                            </li>
+                            <li class="header__page-address--item">
+                                <a href="#" class="header__page-address--link">
+                                    <span>Spirituality</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+<main class="main">
+    <section class="spirituality-page">
+        <div class="spirituality-page__container _container">
+            <div class="spirituality-page__header">
+                <h1 class="spirituality-page__header--main-title _title _large">
+                    Exhibitions
+                </h1>
+                <div class="spirituality-page__header--text">
+                    <p>
+                        Generally, spirituality is about everything that has to do with the spirit.
+                    </p>
+                    <p>
+                        Its simplest meaning is the concept that in addition to the tangible matter exists a spiritual level of existence, from which matter takes life.
+                    </p>
+                </div>
+                
+                <ul class="spirituality-page__header--list">
+                    <li class="spirituality-page__header--item">
+    <figure>
+        <picture>
+            <source srcset="img/spirituality/header-painting-1.webp" type="image/webp">
+            <img src="img/spirituality/header-painting-1.jpg" alt="" width="300" loading="lazy" class="spirituality-page__header--img _border">
+        </picture>
+        <figcaption>“She was born with the light” 100 cm x 120 cm</figcaption>
+      </figure>
+</li><li class="spirituality-page__header--item">
+    <figure>
+        <picture>
+            <source srcset="img/spirituality/header-painting-2.webp" type="image/webp">
+            <img src="img/spirituality/header-painting-2.jpg" alt="" width="300" loading="lazy" class="spirituality-page__header--img _border">
+        </picture>
+        <figcaption>“The mysterious life of the people” <br>90 cm x 60 cm</figcaption>
+      </figure>
+</li><li class="spirituality-page__header--item">
+    <figure>
+        <picture>
+            <source srcset="img/spirituality/header-painting-3.webp" type="image/webp">
+            <img src="img/spirituality/header-painting-3.jpg" alt="" width="300" loading="lazy" class="spirituality-page__header--img _border">
+        </picture>
+        <figcaption>“The mysterious life of the people” <br>90 cm x 60 cm</figcaption>
+      </figure>
+</li><li class="spirituality-page__header--item">
+    <figure>
+        <picture>
+            <source srcset="img/spirituality/header-painting-4.webp" type="image/webp">
+            <img src="img/spirituality/header-painting-4.jpg" alt="" width="300" loading="lazy" class="spirituality-page__header--img _border">
+        </picture>
+        <figcaption>“Noble purple” 70 cm x 40 cm</figcaption>
+      </figure>
+</li>
+                </ul>
+            </div>
+            <div class="spirituality-page__main">
+                <div class="spirituality-page__slider swiper">
+                    <ul class="spirituality-page__slider--list swiper-wrapper">
+                        <li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-1.webp" type="image/webp">
+            <img src="img/spirituality/painting-1.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-2.webp" type="image/webp">
+            <img src="img/spirituality/painting-2.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-3.webp" type="image/webp">
+            <img src="img/spirituality/painting-3.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-4.webp" type="image/webp">
+            <img src="img/spirituality/painting-4.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-1.webp" type="image/webp">
+            <img src="img/spirituality/painting-1.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-2.webp" type="image/webp">
+            <img src="img/spirituality/painting-2.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-3.webp" type="image/webp">
+            <img src="img/spirituality/painting-3.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-4.webp" type="image/webp">
+            <img src="img/spirituality/painting-4.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-1.webp" type="image/webp">
+            <img src="img/spirituality/painting-1.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-2.webp" type="image/webp">
+            <img src="img/spirituality/painting-2.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-3.webp" type="image/webp">
+            <img src="img/spirituality/painting-3.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li><li class="spirituality-page__slider--item swiper-slide">
+    <div class="spirituality-page__slider--painting">
+        <picture>
+            <source srcset="img/spirituality/painting-4.webp" type="image/webp">
+            <img src="img/spirituality/painting-4.jpg" alt="" loading="lazy" width="300" class="spirituality-page__slider--painting-img _border">
+        </picture>
+    </div>
+    <div class="spirituality-page__slider--painting-info">
+        <h2 class="spirituality-page__slider--painting-name _title _min">
+            Name of the painting
+        </h2>
+    </div>
+</li>
+                    </ul>
+                </div>
+                <div class="spirituality-page__gallery-slider swiper">
+                    <ul class="spirituality-page__gallery-slider--list swiper-wrapper">
+                        <li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-1-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-1-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-2-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-2-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-3-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-3-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-4-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-4-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-1-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-1-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-2-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-2-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-3-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-3-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-4-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-4-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-1-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-1-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-2-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-2-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-3-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-3-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li><li class="spirituality-page__gallery-slider--slide swiper-slide">
+    <div class="spirituality-page__gallery-slider--slide-body">
+        <picture>
+            <source srcset="img/spirituality/painting-4-min.webp" type="image/webp">
+            <img src="img/spirituality/painting-4-min.jpg" alt="" width="213" loading="lazy" class="spirituality-page__gallery-slider--slide-img">
+        </picture>
+    </div>
+</li>
+                    </ul>
+                    <div class="spirituality-page__gallery-slider--navigation _slider-navigation">
+                        <div class="spirituality-page__gallery-slider--navigation-body _slider-navigation-body">
+                            <div class="spirituality-page__gallery-slider--navigation-arrow swiper-button-prev _slider-arrow" id="spirituality-arrow-prev"></div>
+                            <div class="spirituality-page__gallery-slider--navigation-pagination swiper-pagination _slider-pagination" id="spirituality-pagination"></div>
+                            <div class="spirituality-page__gallery-slider--navigation-arrow swiper-button-next _slider-arrow" id="spirituality-arrow-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spirituality-page__footer">
+                <div class="spirituality-page__footer--container _container">
+                    <div class="spirituality-page__share-block share-block">
+    <div class="share-block__body">
+        <a href="#" class="share-block__main-link">
+            <i class="share-block__main-link--icon _icon-share"></i>
+            <div>
+                <span>Share Kate's art with the world</span>
+            </div>
+        </a>
+        <ul class="share-block__list">
+            <li class="share-block__item">
+                <a href="#" class="share-block__link" title="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <g clip-path="url(#share-block-facebook-v2)">
+                            <path d="M15.9834 4.01402H18.1665V0.211845C17.7899 0.160033 16.4946 0.043457 14.9861 0.043457C11.8385 0.043457 9.68236 2.02326 9.68236 5.66202V9.01085H6.20898V13.2614H9.68236V23.9565H13.9409V13.2624H17.2738L17.8028 9.01184H13.9399V6.08349C13.9409 4.85496 14.2717 4.01402 15.9834 4.01402Z" fill="#3B5998"/>
+                        </g>
+                        <defs>
+                            <clipPath id="share-block-facebook-v2">
+                                <rect width="23.913" height="23.913" fill="white" transform="translate(0.0439453 0.043457)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+            <li class="share-block__item">
+                <a href="#" class="share-block__link" title="Tik-Tok">
+                    <svg width="22" height="22" viewBox="0 0 22 22">
+                        <g clip-path="url(#share-block-tik-tok-v2)">
+                            <path d="M20.3938 5.58175C19.1532 5.58175 18.0085 5.17075 17.0892 4.47739C16.035 3.68255 15.2775 2.51662 15.01 1.17279C14.9438 0.840756 14.9081 0.49811 14.9047 0.146973H11.3606V9.83107L11.3564 15.1355C11.3564 16.5536 10.4329 17.7561 9.15274 18.179C8.78122 18.3017 8.37998 18.3599 7.96218 18.3369C7.42889 18.3076 6.92915 18.1467 6.49479 17.8869C5.57045 17.334 4.94375 16.3312 4.92677 15.1839C4.90002 13.3909 6.34958 11.929 8.14136 11.929C8.49505 11.929 8.83472 11.9867 9.15274 12.0916V9.44469V8.49318C8.81731 8.4435 8.47594 8.4176 8.13075 8.4176C6.16955 8.4176 4.33531 9.23282 3.02417 10.7015C2.03317 11.8114 1.43874 13.2274 1.34703 14.7122C1.22687 16.6628 1.94061 18.517 3.32478 19.885C3.52816 20.0858 3.74173 20.2722 3.96507 20.4442C5.1518 21.3575 6.60264 21.8525 8.13075 21.8525C8.47594 21.8525 8.81731 21.8271 9.15274 21.7774C10.5802 21.5659 11.8973 20.9125 12.9367 19.885C14.2139 18.6227 14.9196 16.9468 14.9272 15.1631L14.9089 7.24191C15.5182 7.71193 16.1844 8.10086 16.8994 8.40274C18.0114 8.87192 19.1905 9.10969 20.404 9.10926V6.53581V5.5809C20.4049 5.58175 20.3947 5.58175 20.3938 5.58175Z" fill="black"/>
+                        </g>
+                        <defs>
+                            <clipPath id="share-block-tik-tok-v2">
+                                <rect width="21.7391" height="21.7391" fill="white" transform="translate(0 0.130371)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+            <li class="share-block__item">
+                <a href="#" class="share-block__link" title="Instagram">
+                    <svg width="23" height="22" viewBox="0 0 23 22">
+                        <g clip-path="url(#share-block-instagram-v2)">
+                            <path d="M16.7246 0.130371H6.75469C3.50988 0.130371 0.870117 2.77014 0.870117 6.01495V15.9851C0.870117 19.2297 3.50988 21.8695 6.75469 21.8695H16.7248C19.9694 21.8695 22.6092 19.2297 22.6092 15.9851V6.01495C22.6092 2.77014 19.9694 0.130371 16.7246 0.130371V0.130371ZM11.7397 16.944C8.46201 16.944 5.79555 14.2776 5.79555 10.9999C5.79555 7.72227 8.46201 5.0558 11.7397 5.0558C15.0173 5.0558 17.6838 7.72227 17.6838 10.9999C17.6838 14.2776 15.0173 16.944 11.7397 16.944ZM17.8259 6.45761C16.8573 6.45761 16.0695 5.6698 16.0695 4.7012C16.0695 3.7326 16.8573 2.94462 17.8259 2.94462C18.7945 2.94462 19.5825 3.7326 19.5825 4.7012C19.5825 5.6698 18.7945 6.45761 17.8259 6.45761Z" fill="#C33677"/>
+                            <path d="M11.739 6.32935C9.16426 6.32935 7.06934 8.42411 7.06934 10.999C7.06934 13.5738 9.16426 15.6687 11.739 15.6687C14.3139 15.6687 16.4087 13.5738 16.4087 10.999C16.4087 8.42411 14.3139 6.32935 11.739 6.32935Z" fill="#C33677"/>
+                            <path d="M17.8267 4.21924C17.561 4.21924 17.3447 4.43551 17.3447 4.70122C17.3447 4.96692 17.561 5.18319 17.8267 5.18319C18.0926 5.18319 18.3089 4.96708 18.3089 4.70122C18.3089 4.43535 18.0926 4.21924 17.8267 4.21924Z" fill="#C33677"/>
+                        </g>
+                        <defs>
+                            <clipPath id="share-block-instagram-v2">
+                                <rect width="21.7391" height="21.7391" fill="white" transform="translate(0.870117 0.130371)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+            <li class="share-block__item">
+                <a href="#" class="share-block__link" title="YouTube">
+                    <svg width="29" height="30" viewBox="0 0 29 30">
+                        <path d="M27.2953 8.37803C26.99 7.24299 26.0951 6.34825 24.9602 6.04262C22.8869 5.47534 14.5936 5.47534 14.5936 5.47534C14.5936 5.47534 6.30066 5.47534 4.22738 6.02111C3.11433 6.32642 2.1976 7.24315 1.89229 8.37803C1.34668 10.4511 1.34668 14.7505 1.34668 14.7505C1.34668 14.7505 1.34668 19.0716 1.89229 21.123C2.19792 22.2579 3.0925 23.1526 4.22754 23.4583C6.32249 24.0257 14.594 24.0257 14.594 24.0257C14.594 24.0257 22.8869 24.0257 24.9602 23.4799C26.0953 23.1745 26.99 22.2797 27.2956 21.1448C27.8411 19.0716 27.8411 14.7724 27.8411 14.7724C27.8411 14.7724 27.8629 10.4511 27.2953 8.37803ZM11.9532 18.7224V10.7786L18.8495 14.7505L11.9532 18.7224Z" fill="#FF0000"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+        <footer class="footer">
+            <div class="footer__container _container">
+                <a href="index.html" class="footer__logo">
+                    <img src="img/logo.svg" width="283" height="40" loading="lazy" alt="" class="footer__logo--img">
+                </a>
+                <nav class="footer__nav">
+                    <ul class="footer__nav--list">
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                Main
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                Gallery
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                Exhibitions
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                Bio
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                FAQ
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                Contacts
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                Auction
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link">
+                                NFT
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="footer__nav--social-list">
+                        <li class="footer__nav--social-item _like-item">
+                            <a href="#" class="footer__nav--social-link _alt">
+                                <i class="footer__nav--social-icon _icon-love"></i>
+                            </a>
+                        </li>
+                        <li class="footer__nav--social-item _line-item">
+                            <span class="footer__nav--social-line"></span>
+                        </li>
+                        <li class="footer__nav--social-item">
+                            <a href="#" class="footer__nav--social-link" title="Facebook" style="--hover-bg: #3B5998;">
+                                <svg width="22" height="22" viewBox="0 0 22 22">
+                                    <path d="M14.6644 3.65292H16.6728V0.154917C16.3263 0.10725 15.1346 0 13.7468 0C10.851 0 8.86738 1.82142 8.86738 5.16908V8.25H5.67188V12.1605H8.86738V22H12.7852V12.1614H15.8515L16.3382 8.25092H12.7843V5.55683C12.7852 4.42658 13.0895 3.65292 14.6644 3.65292Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__nav--social-item">
+                            <a href="#" class="footer__nav--social-link" title="Tik-Tok" style="--hover-bg: #000000">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M18.7626 5.01513C17.6212 5.01513 16.5681 4.63701 15.7224 3.99912C14.7524 3.26787 14.0556 2.19521 13.8095 0.958886C13.7485 0.653418 13.7157 0.338183 13.7126 0.0151367H10.452V8.92451L10.4481 13.8046C10.4481 15.1093 9.59853 16.2155 8.42079 16.6046C8.079 16.7175 7.70986 16.771 7.32548 16.7499C6.83486 16.7229 6.37509 16.5749 5.97548 16.3358C5.12509 15.8272 4.54853 14.9046 4.5329 13.8491C4.50829 12.1995 5.84189 10.8546 7.49033 10.8546C7.81572 10.8546 8.12822 10.9077 8.42079 11.0042V8.56904V7.69365C8.1122 7.64794 7.79814 7.62412 7.48056 7.62412C5.67626 7.62412 3.98876 8.37412 2.78251 9.72529C1.87079 10.7464 1.32392 12.0491 1.23954 13.4151C1.129 15.2097 1.78564 16.9155 3.05907 18.1741C3.24618 18.3589 3.44267 18.5304 3.64814 18.6886C4.73993 19.5288 6.0747 19.9843 7.48056 19.9843C7.79814 19.9843 8.1122 19.9608 8.42079 19.9151C9.73408 19.7206 10.9458 19.1194 11.902 18.1741C13.077 17.0128 13.7263 15.471 13.7333 13.83L13.7165 6.54248C14.277 6.9749 14.8899 7.33271 15.5477 7.61045C16.5708 8.04209 17.6556 8.26084 18.772 8.26044V5.89287V5.01435C18.7727 5.01513 18.7634 5.01513 18.7626 5.01513Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__nav--social-item">
+                            <a href="#" class="footer__nav--social-link" title="Instagram" style="--hover-bg: #C44993">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M14.5862 0H5.41381C2.42858 0 0 2.42858 0 5.41381V14.5863C0 17.5714 2.42858 20 5.41381 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41381C20 2.42858 17.5714 0 14.5862 0V0ZM9.99998 15.4686C6.98454 15.4686 4.53139 13.0154 4.53139 9.99998C4.53139 6.98454 6.98454 4.53139 9.99998 4.53139C13.0154 4.53139 15.4686 6.98454 15.4686 9.99998C15.4686 13.0154 13.0154 15.4686 9.99998 15.4686ZM15.5993 5.82106C14.7082 5.82106 13.9834 5.09627 13.9834 4.20516C13.9834 3.31405 14.7082 2.58911 15.5993 2.58911C16.4904 2.58911 17.2154 3.31405 17.2154 4.20516C17.2154 5.09627 16.4904 5.82106 15.5993 5.82106Z" fill="white"/>
+                                    <path d="M9.99923 5.70312C7.63046 5.70312 5.70312 7.63031 5.70312 9.99923C5.70312 12.368 7.63046 14.2953 9.99923 14.2953C12.3682 14.2953 14.2953 12.368 14.2953 9.99923C14.2953 7.63031 12.3682 5.70312 9.99923 5.70312Z" fill="white"/>
+                                    <path d="M15.5997 3.76172C15.3552 3.76172 15.1562 3.96069 15.1562 4.20514C15.1562 4.44958 15.3552 4.64856 15.5997 4.64856C15.8443 4.64856 16.0432 4.44974 16.0432 4.20514C16.0432 3.96054 15.8443 3.76172 15.5997 3.76172Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__nav--social-item">
+                            <a href="#" class="footer__nav--social-link" title="YouTube" style="--hover-bg: #FF0000">
+                                <svg width="26" height="26" viewBox="0 0 26 26">
+                                    <path d="M24.6725 6.90778C24.3917 5.86354 23.5683 5.04038 22.5243 4.7592C20.6168 4.2373 12.987 4.2373 12.987 4.2373C12.987 4.2373 5.35747 4.2373 3.45005 4.73941C2.42604 5.0203 1.58265 5.86369 1.30177 6.90778C0.799805 8.81505 0.799805 12.7705 0.799805 12.7705C0.799805 12.7705 0.799805 16.7458 1.30177 18.6332C1.58295 19.6773 2.40596 20.5004 3.4502 20.7816C5.37755 21.3036 12.9873 21.3036 12.9873 21.3036C12.9873 21.3036 20.6168 21.3036 22.5243 20.8015C23.5685 20.5205 24.3917 19.6973 24.6728 18.6532C25.1746 16.7458 25.1746 12.7906 25.1746 12.7906C25.1746 12.7906 25.1947 8.81505 24.6725 6.90778ZM10.5578 16.4246V9.11631L16.9024 12.7705L10.5578 16.4246Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__copy">
+                ⓒ 2022 all rights reserved
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>

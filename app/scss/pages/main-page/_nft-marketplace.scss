@@ -50,10 +50,10 @@
 
     &__container {
         grid-area: 1/1;
-        padding-top: 20vw;
-        @media(min-width: 500px) {
+        align-self: center;
+        /* @media(min-width: 500px) {
             padding-top: 150px;
-        }
+        } */
         
         
         width: 100%;

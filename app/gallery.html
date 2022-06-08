@@ -137,43 +137,9 @@
 
                     ])
                 </ul>
-                <div class="gallery-page__content--pagination page-section__pagination">
-                    <div class="page-section__pagination--body">
-                        <a href="#" class="page-section__pagination--arrow-link _round-arrow-btn _large _prev">
-                            <i class="page-section__pagination--arrow-icon _round-arrow-btn-icon _icon-arrow-to-right"></i>
-                        </a>
-                        <ul class="page-section__pagination--list">
-                            <li class="page-section__pagination--item">
-                                <a href="#" class="page-section__pagination--link _current">
-                                    1
-                                </a>
-                            </li>
-                            <li class="page-section__pagination--item">
-                                <a href="#" class="page-section__pagination--link">
-                                    2
-                                </a>
-                            </li>
-                            <li class="page-section__pagination--item">
-                                <a href="#" class="page-section__pagination--link">
-                                    3
-                                </a>
-                            </li>
-                            <li class="page-section__pagination--item">
-                                <span class="page-section__pagination--etc">
-                                    ...
-                                </span>
-                            </li>
-                            <li class="page-section__pagination--item">
-                                <a href="#" class="page-section__pagination--link">
-                                    12
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="#" class="page-section__pagination--arrow-link _round-arrow-btn _large _next">
-                            <i class="page-section__pagination--arrow-icon _round-arrow-btn-icon _icon-arrow-to-right"></i>
-                        </a>
-                    </div>
-                </div>
+                @@include("html/_page-pagination.html", {
+                    "class": 'gallery-page__content--pagination'
+                })
                 @@include("html/_share-block.html", {
                     "class": 'gallery-page__content--share-block',
                 })

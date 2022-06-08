@@ -1,0 +1,51 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'Exhibitions',
+})
+
+<main class="main">
+    <section class="exhibitions-page page-section">
+        <div class="exhibitions-page__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/exhibitions/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/exhibitions/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/exhibitions/header-bg-mob.webp" type="image/webp">
+                    <img src="img/exhibitions/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <h1 class="page-section__header--main-title _page-title">
+                Exhibitions
+            </h1>
+        </div>
+        <div class="exhibitions-page__content">
+            @@loop("html/exhibitions/_exhibitions-article.html", [
+                {"image": '1', "class": '', "bg": ''},
+                {"image": '2', "class": '_rev', "bg": '<div class="exhibitions-page__article--bg"><picture><source srcset="img/exhibitions/article-bg-1.webp" type="image/webp"><img src="img/exhibitions/article-bg-1.png" alt="" width="0" class="exhibitions-page__article--bg-img"></picture></div>'},
+                {"image": '3', "class": '', "bg": ''},
+            ])
+            <div class="exhibitions-page__decor-block">
+                <picture>
+                    <source srcset="img/exhibitions/content-bg.webp" type="image/webp">
+                    <img src="img/exhibitions/content-bg.png" alt="" width="0" class="exhibitions-page__decor-block--img">
+                </picture>
+            </div>
+             @@loop("html/exhibitions/_exhibitions-article.html", [
+                {"image": '4', "class": '', "bg": ''},
+                {"image": '5', "class": '_rev', "bg": '<div class="exhibitions-page__article--bg"><picture><source srcset="img/exhibitions/article-bg-2.webp" type="image/webp"><img src="img/exhibitions/article-bg-2.png" alt="" width="0" class="exhibitions-page__article--bg-img"></picture></div>'},
+            ])
+        </div>
+        <div class="exhibitions-page__footer">
+            <div class="exhibitions-page__footer--container _container">
+                @@include("html/_page-pagination.html", {
+                    "class": 'exhibitions-page__pagination'
+                })
+                @@include("html/_share-block.html", {
+                    "class": 'exhibitions-page__share-block',
+                })
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

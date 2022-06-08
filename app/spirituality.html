@@ -1,0 +1,96 @@
+@@include("html/_header-page-address-v2.html", {
+    "link-1": 'Home',
+    "link-2": 'Exhibitions',
+    "link-3": 'Spirituality',
+})
+
+<main class="main">
+    <section class="spirituality-page">
+        <div class="spirituality-page__container _container">
+            <div class="spirituality-page__header">
+                <h1 class="spirituality-page__header--main-title _title _large">
+                    Exhibitions
+                </h1>
+                <div class="spirituality-page__header--text">
+                    <p>
+                        Generally, spirituality is about everything that has to do with the spirit.
+                    </p>
+                    <p>
+                        Its simplest meaning is the concept that in addition to the tangible matter exists a spiritual level of existence, from which matter takes life.
+                    </p>
+                </div>
+                
+                <ul class="spirituality-page__header--list">
+                    @@loop("html/spirituality/_spirituality-header-item.html", [
+                        {"painting": '1', "descr": '“She was born with the light” 100 cm x 120 cm'},
+                        {"painting": '2', "descr": '“The mysterious life of the people” <br>90 cm x 60 cm'},
+                        {"painting": '3', "descr": '“The mysterious life of the people” <br>90 cm x 60 cm'},
+                        {"painting": '4', "descr": '“Noble purple” 70 cm x 40 cm'},
+                    ])
+                </ul>
+            </div>
+            <div class="spirituality-page__main">
+                <div class="spirituality-page__slider swiper">
+                    <ul class="spirituality-page__slider--list swiper-wrapper">
+                        @@loop("html/spirituality/_spirituality-slider-slide.html", [
+
+                            {"painting": '1'},
+                            {"painting": '2'},
+                            {"painting": '3'},
+                            {"painting": '4'},
+                            
+                            {"painting": '1'},
+                            {"painting": '2'},
+                            {"painting": '3'},
+                            {"painting": '4'},
+                            
+                            {"painting": '1'},
+                            {"painting": '2'},
+                            {"painting": '3'},
+                            {"painting": '4'},
+
+                        ])
+                    </ul>
+                </div>
+                <div class="spirituality-page__gallery-slider swiper">
+                    <ul class="spirituality-page__gallery-slider--list swiper-wrapper">
+                        @@loop("html/spirituality/_spirituality-gallery-slide.html", [
+
+                            {"painting": '1'},
+                            {"painting": '2'},
+                            {"painting": '3'},
+                            {"painting": '4'},
+                            
+                            {"painting": '1'},
+                            {"painting": '2'},
+                            {"painting": '3'},
+                            {"painting": '4'},
+                            
+                            {"painting": '1'},
+                            {"painting": '2'},
+                            {"painting": '3'},
+                            {"painting": '4'},
+
+                        ])
+                    </ul>
+                    <div class="spirituality-page__gallery-slider--navigation _slider-navigation">
+                        <div class="spirituality-page__gallery-slider--navigation-body _slider-navigation-body">
+                            <div class="spirituality-page__gallery-slider--navigation-arrow swiper-button-prev _slider-arrow" id="spirituality-arrow-prev"></div>
+                            <div class="spirituality-page__gallery-slider--navigation-pagination swiper-pagination _slider-pagination" id="spirituality-pagination"></div>
+                            <div class="spirituality-page__gallery-slider--navigation-arrow swiper-button-next _slider-arrow" id="spirituality-arrow-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spirituality-page__footer">
+                <div class="spirituality-page__footer--container _container">
+                    @@include("html/_share-block.html", {
+                        "class": 'spirituality-page__share-block',
+                    })
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

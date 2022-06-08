@@ -200,6 +200,48 @@ let relatedPaintingsSlider = new Swiper('.related-paintings__slider', {
   }
 })
 
+
+
+let spiritualityGallerySlider = new Swiper('.spirituality-page__gallery-slider', {
+  spaceBetween: 9,
+  slidesPerView: 2,
+  navigation: {
+    nextEl: '.swiper-button-next#spirituality-arrow-next',
+    prevEl: '.swiper-button-prev#spirituality-arrow-prev',
+},
+  pagination: {
+    el: '.swiper-pagination#spirituality-pagination',
+    clickable: true,
+  },
+  
+  breakpoints: {
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    },
+    1250: {
+      slidesPerView: 8,
+      spaceBetween: 12,
+    }
+  }
+})
+
+let spiritualitySlider = new Swiper('.spirituality-page__slider', {
+  spaceBetween: 20,
+  slidesPerView: 1,
+  effect: "fade",
+  autoHeight: true,
+  thumbs: {
+    swiper: spiritualityGallerySlider,
+  },
+})
+
+window.onload = function() {
+  if(spiritualitySlider) spiritualitySlider.update();
+}
+
+//document.addEventListener('domco')
+
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
@@ -214,6 +256,59 @@ wow.init();
 // =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
 
 */
+
+/* function getCoords(elem) {
+  var box = elem.getBoundingClientRect();
+
+  return {
+  top: box.top + pageYOffset,
+  left: box.left + pageXOffset
+  };
+
+}
+
+function scrollPage() {
+
+const offsetCheckJs = document.querySelector('.offset-check-js');
+let top = [getCoords(offsetCheckJs).top, false];
+
+header.classList.add('_loaded');
+
+function scrollPageFunc() {
+top[0] = getCoords(offsetCheckJs).top;
+
+if(top[0] >= 500 && top[1] == false) {
+
+    top[1] = true;
+    header.style.setProperty('--pos', '-100%');
+
+    setTimeout(function() {
+        header.classList.add('_active');
+        header.style.setProperty('--pos', '0%');
+    },200);
+
+} else if(top[0] <= 500 && top[1] == true) {
+
+    top[1] = false;
+    header.style.setProperty('--pos', '-100%');
+
+    setTimeout(function() {
+        header.style.setProperty('--pos', '0%');
+        header.classList.remove('_active');
+        
+    },200);
+
+}
+}
+
+scrollPageFunc();
+
+window.onscroll = scrollPageFunc;
+
+}
+
+scrollPage(); */
+
 
 
 let resizeCheck = {}, windowSize;

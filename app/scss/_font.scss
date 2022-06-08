@@ -103,6 +103,22 @@
     }
 }
 
+._article-title {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 100%;
+
+    @include _768 {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    
+    @include _992 {
+        font-size: 2.1875rem;
+    }
+
+}
+
 ._section-title {
 
     font-family: var(--title-font);

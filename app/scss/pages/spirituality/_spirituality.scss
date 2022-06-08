@@ -1,0 +1,300 @@
+.spirituality-page {
+    padding: 30px 0 40px 0;
+
+    @include _768 {
+        padding: 50px 0 60px 0;
+    }
+    
+    @include _992 {
+        padding: 71px 0 90px 0;
+    }
+    // .spirituality-page__container
+
+    &__container {
+    }
+
+    // .spirituality-page__header
+
+    &__header {
+
+        // .spirituality-page__header--main-title
+
+        &--main-title {
+            margin: 0;
+            color: var(--dark-2);
+        }
+
+        // .spirituality-page__header--text
+
+        &--text {
+            padding: 1px 0 17px 0;
+
+            font-size: 0.75rem;
+            line-height: 175%;
+
+            @include _768 {
+                font-size: 1rem;
+                padding: 1px 0 23px 0;
+            }
+            
+            @include _992 {
+                max-width: 80%;
+                font-size: 1.25rem;
+                padding: 15px 0 10px 0;
+            }
+
+        }
+
+        // .spirituality-page__header--list
+
+        &--list {
+            display: grid;
+            grid-template-columns: 100%;
+
+            @include _768 {
+                grid-template-columns: 1fr 1fr;
+                margin: -10px -10px 0 -10px;
+            }
+            
+            @include _992 {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                margin: -10px;
+            }
+
+           
+        }
+
+        // .spirituality-page__header--item
+
+        &--item {
+            padding: 10px 0;
+
+            @include _768 {
+                padding: 10px 10px 0 10px;
+            }
+
+            @include _992 {
+                padding: 10px;
+            }
+
+            & figure {
+                min-height: 100%;
+
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            & picture {
+                flex: 1 1 auto;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            & figcaption {                
+
+                padding-top: 10px;
+
+                font-weight: 500;
+                font-size: 0.75rem;
+                line-height: 144%;
+
+                color: var(--dark-2);
+
+                @include _768 {
+                    font-size: 0.875rem;
+                    padding-top: 13px;
+                    min-height: 70px;
+                }
+                
+                @include _992 {
+                    font-size: 1.125rem;
+                    padding-top: 15px;
+                    min-height: 100px;
+                }
+            }
+        }
+
+        // .spirituality-page__header--img
+
+        &--img {
+            width: 100%; height: 100%;
+            flex: 1 1 100%;
+
+            object-fit: cover;
+        }
+    }
+
+    // .spirituality-page__main
+
+    &__main {
+    }
+
+    // .spirituality-page__slider
+
+    &__slider {
+        padding: 20px 0 0 0;
+
+        @include _768 {
+            padding: 0;
+        }
+        // .spirituality-page__slider--list
+
+        &--list {
+        }
+
+        // .spirituality-page__slider--item
+
+        &--item {
+        }
+
+        // .spirituality-page__slider--painting
+
+        &--painting {
+        }
+
+        // .spirituality-page__slider--painting-img
+
+        &--painting-img {
+            width: 100%;
+        }
+
+        // .spirituality-page__slider--painting-info
+
+        &--painting-info {
+            background: var(--white);
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%; top: 21px;
+                width: 2px; height: 23px;
+                background: var(--dark-3);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0; top: 50%;
+                width: 100%; height: 100%;
+                background: var(--white);
+                z-index: -1;
+            }
+
+            padding-top: 57px; padding-bottom: 15px;
+
+            @include _768 {
+                padding-top: 61px; padding-bottom: 15px;
+
+                &::before {
+                    top: 23px;
+                }
+            }
+            
+            @include _992 {
+                padding-top: 73px; padding-bottom: 40px;
+
+                &::before {
+                    top: 30px;
+                }
+            }
+        }
+
+        // .spirituality-page__slider--painting-name
+
+        &--painting-name {
+            text-align: center;
+        }
+    }
+
+    // .spirituality-page__gallery-slider
+
+    &__gallery-slider {
+
+        // .spirituality-page__gallery-slider--list
+
+        &--list {
+        }
+
+        // .spirituality-page__gallery-slider--slide
+
+        &--slide {
+            cursor: pointer;
+        }
+
+        // .spirituality-page__gallery-slider--slide-body
+
+        &--slide-body {
+            position: relative;
+            width: 100%; padding-top: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0;
+                width: 100%; height: 100%;
+                z-index: 2;
+                border: 3px solid var(--dark);
+            }
+        }
+
+        // .spirituality-page__gallery-slider--slide-img
+
+        &--slide-img {
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        // .spirituality-page__gallery-slider--navigation
+
+        &--navigation {
+            padding-top: 20px;
+
+            @include _768 {
+                padding-top: 34px;
+            }
+            
+            @include _992 {
+                padding-top: 53px;
+            }
+        }
+
+        // .spirituality-page__gallery-slider--navigation-body
+
+        &--navigation-body {
+        }
+
+        // .spirituality-page__gallery-slider--navigation-arrow
+
+        &--navigation-arrow {
+        }
+
+        // .spirituality-page__gallery-slider--navigation-pagination
+
+        &--navigation-pagination {
+        }
+    }
+
+    // .spirituality-page__footer
+
+    &__footer {
+        padding-top: 20px;
+
+        @include _768 {
+            padding-top: 30px;
+        }
+        
+        @include _992 {
+            padding-top: 40px;
+        }
+
+        // .spirituality-page__footer--container
+
+        &--container {
+        }
+    }
+}
+
