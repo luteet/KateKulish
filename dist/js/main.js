@@ -128,10 +128,10 @@ body.addEventListener('click', function (event) {
         }
         activeFaq.forEach(thisActiveFaq => {
           slideUp(thisActiveFaq.querySelector('._faq-item-content'));
-          thisActiveFaq.classList.remove('_active');
-          /* setTimeout(() => {
-            
-          },500) */
+          
+          setTimeout(() => {
+            thisActiveFaq.classList.remove('_active');  
+          },500)
         })
 
       }
