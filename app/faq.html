@@ -1,0 +1,45 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'FAQ',
+})
+
+<main class="main">
+    <section class="faq-page page-section">
+        <div class="faq-page__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/faq/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/faq/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/faq/header-bg-mob.webp" type="image/webp">
+                    <img src="img/faq/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <div class="page-section__header--container _container">
+                <h1 class="page-section__header--main-title _page-title">
+                    FAQ
+                </h1>
+            </div>
+        </div>
+        <div class="faq-page__content">
+            <div class="faq-page__content--container _container">
+                <h2 class="faq-page__content--title _title _large _txt-center">
+                    Question - Answer
+                </h2>
+                <div class="faq-page__content--block">
+                    <ul class="faq-page__list _faq-wrapper">
+                        @@loop("html/faq/_faq-item.html", [
+                            {"class": ''},
+                            {"class": ''},
+                            {"class": '_active'},
+                            {"class": ''},
+                            {"class": ''},
+                            {"class": ''},
+                        ])
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

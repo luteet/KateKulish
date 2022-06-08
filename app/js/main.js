@@ -1,4 +1,62 @@
 
+let slideUp = (target, duration=500) => {
+  target.style.transitionProperty = 'height, margin, padding';
+  target.style.transitionDuration = duration + 'ms';
+  target.style.boxSizing = 'border-box';
+  target.style.height = target.offsetHeight + 'px';
+  target.offsetHeight;
+  target.style.overflow = 'hidden';
+  target.style.height = 0;
+  target.style.paddingTop = 0;
+  target.style.paddingBottom = 0;
+  target.style.marginTop = 0;
+  target.style.marginBottom = 0;
+  window.setTimeout( () => {
+    target.style.display = 'none';
+    target.style.removeProperty('height');
+    target.style.removeProperty('padding-top');
+    target.style.removeProperty('padding-bottom');
+    target.style.removeProperty('margin-top');
+    target.style.removeProperty('margin-bottom');
+    target.style.removeProperty('overflow');
+    target.style.removeProperty('transition-duration');
+    target.style.removeProperty('transition-property');
+  }, duration);
+}
+
+let slideDown = (target, duration=500) => {
+  target.style.removeProperty('display');
+  let display = window.getComputedStyle(target).display;
+
+  if (display === 'none')
+    display = 'block';
+
+  target.style.display = display;
+  let height = target.offsetHeight;
+  target.style.overflow = 'hidden';
+  target.style.height = 0;
+  target.style.paddingTop = 0;
+  target.style.paddingBottom = 0;
+  target.style.marginTop = 0;
+  target.style.marginBottom = 0;
+  target.offsetHeight;
+  target.style.boxSizing = 'border-box';
+  target.style.transitionProperty = "height, margin, padding";
+  target.style.transitionDuration = duration + 'ms';
+  target.style.height = height + 'px';
+  target.style.removeProperty('padding-top');
+  target.style.removeProperty('padding-bottom');
+  target.style.removeProperty('margin-top');
+  target.style.removeProperty('margin-bottom');
+  window.setTimeout( () => {
+    target.style.removeProperty('height');
+    target.style.removeProperty('overflow');
+    target.style.removeProperty('transition-duration');
+    target.style.removeProperty('transition-property');
+  }, duration);
+}
+
+
 const body = document.querySelector('body'),
     html = document.querySelector('html'),
     menu = document.querySelectorAll('._burger, .header__nav, body'),
@@ -8,7 +66,7 @@ const body = document.querySelector('body'),
 
 
 
-let thisTarget;
+let thisTarget, faqSlideCheck = true;
 body.addEventListener('click', function (event) {
 
     thisTarget = event.target;
@@ -52,6 +110,45 @@ body.addEventListener('click', function (event) {
 
     }
 
+
+
+    let faqItemHeader = thisTarget.closest('._faq-item-header');
+    if(faqItemHeader && faqSlideCheck) {
+      faqSlideCheck = false;
+      let thisFaqCheck = true;
+
+      let faqItem = faqItemHeader.closest('._faq-item'),
+          wrapper = faqItem.closest('._faq-wrapper'),
+          activeFaq = wrapper.querySelectorAll('._faq-item._active'),
+          faqItemContent = faqItem.querySelector('._faq-item-content');
+
+      if(activeFaq.length) {
+        if(faqItem.classList.contains('_active')) {
+          thisFaqCheck = false;
+        }
+        activeFaq.forEach(thisActiveFaq => {
+          slideUp(thisActiveFaq.querySelector('._faq-item-content'));
+          thisActiveFaq.classList.remove('_active');
+          /* setTimeout(() => {
+            
+          },500) */
+        })
+
+      }
+
+      if(thisFaqCheck) {
+        slideDown(faqItemContent);
+        faqItem.classList.add('_active');
+      }
+      
+      
+
+      setTimeout(() => {
+        faqSlideCheck = true;
+      },500)
+
+
+    }
 
 })
 
@@ -237,6 +334,7 @@ let spiritualitySlider = new Swiper('.spirituality-page__slider', {
 })
 
 window.onload = function() {
+  if(paintingSliderMain) paintingSliderMain.update();
   if(spiritualitySlider) spiritualitySlider.update();
 }
 
