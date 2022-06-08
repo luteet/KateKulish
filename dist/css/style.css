@@ -1961,6 +1961,11 @@ body._popup-active {
   font-size: 1.375rem;
 }
 
+._title strong {
+  color: var(--white);
+  -webkit-text-stroke: 1px var(--dark-2);
+}
+
 ._title._large {
   font-weight: 600;
   font-size: 2rem;
@@ -3832,6 +3837,162 @@ body._popup-active {
   padding-top: 20px;
 }
 
+.bio-page__intro {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+}
+
+.bio-page__intro--bg {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  padding-top: 140%;
+}
+
+.bio-page__intro--img {
+  position: absolute;
+  left: 0;
+  top: -10%;
+  width: 100%;
+}
+
+.bio-page__intro--content {
+  padding-top: 50px;
+  /* @media(min-width: 1900px) {
+      padding-top: 60px;
+  } */
+}
+
+.bio-page__intro--text {
+  color: var(--gray);
+  font-size: 0.75rem;
+  line-height: 150%;
+}
+
+.bio-page__intro--text p {
+  padding: 5px 0;
+}
+
+.bio-page__article {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+}
+
+.bio-page__article._1 .bio-page__article--container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+}
+
+.bio-page__article._1 .bio-page__article--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bio-page__article._1 .bio-page__article--img {
+  height: auto;
+  max-width: 320px;
+}
+
+.bio-page__article._1 .bio-page__article--info:nth-child(2) {
+  padding: 5px 0;
+  /* display: flex;
+  justify-content: flex-end;
+  flex-direction: column; */
+}
+
+.bio-page__article._1 .bio-page__article--info:nth-child(3) {
+  padding: 5px 0;
+}
+
+.bio-page__article._2 {
+  padding: 5px 0 15px 0;
+}
+
+.bio-page__article._2 .bio-page__article--content {
+  display: block;
+}
+
+.bio-page__article._2 picture {
+  display: none;
+}
+
+.bio-page__article._2 .bio-page__article--title {
+  padding-top: 0px;
+  -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.bio-page__article._2 p:nth-child(3) {
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.bio-page__article._2 p:nth-child(4) {
+  -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.bio-page__article._2 .bio-page__article--img {
+  display: none;
+}
+
+.bio-page__article._2 .bio-page__article--img {
+  width: 100%;
+  height: auto;
+}
+
+.bio-page__article--bg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+.bio-page__article--bg-img {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  -webkit-transform: translate(0, -10%);
+          transform: translate(0, -10%);
+  width: 100%;
+}
+
+.bio-page__article--content {
+  display: flex;
+}
+
+.bio-page__article--image {
+  flex: 0 1 40%;
+}
+
+.bio-page__article--img {
+  width: 100%;
+}
+
+.bio-page__article--title {
+  margin-bottom: 3px;
+}
+
+.bio-page__article--title._large {
+  font-size: 1.5625rem;
+}
+
+.bio-page__article--text {
+  font-size: 0.75rem;
+  line-height: 156%;
+  color: var(--gray);
+}
+
 .footer {
   flex: 0 0 auto;
   background: var(--dark-2);
@@ -4096,6 +4257,10 @@ body._popup-active {
 
   ._title {
     font-size: 2.125rem;
+  }
+
+  ._title strong {
+    -webkit-text-stroke: 2px var(--dark-2);
   }
 
   ._title._large {
@@ -4494,6 +4659,121 @@ body._popup-active {
 
   .spirituality-page__footer {
     padding-top: 30px;
+  }
+
+  .bio-page__content {
+    padding-top: 75px;
+  }
+
+  .bio-page__intro--bg {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: 1/1;
+    padding-top: 110%;
+  }
+
+  .bio-page__intro--img {
+    bottom: 0;
+    top: auto;
+  }
+
+  .bio-page__intro--container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: 1/1;
+  }
+
+  .bio-page__intro--content {
+    padding-top: 0px;
+    max-width: 70%;
+    padding-bottom: 50px;
+  }
+
+  .bio-page__intro--text {
+    color: var(--gray-2);
+    font-size: 1rem;
+  }
+
+  .bio-page__intro--text p::after {
+    content: "";
+    display: block;
+    width: 30%;
+    padding-top: 75%;
+    border-radius: 50%;
+    float: right;
+  }
+
+  .bio-page__article._1 {
+    padding: 15px 0;
+  }
+
+  .bio-page__article._1 .bio-page__article--content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 36.5% 63.5%;
+    grid-template-columns: 36.5% 63.5%;
+  }
+
+  .bio-page__article._1 .bio-page__article--image {
+    -ms-grid-column: 1;
+    grid-column: 1/1;
+    -ms-grid-row: 1;
+    grid-row: 1/1;
+  }
+
+  .bio-page__article._1 .bio-page__article--img {
+    max-width: none;
+  }
+
+  .bio-page__article._1 .bio-page__article--info:nth-child(2) {
+    padding: 15px 0 15px 30px;
+    -ms-grid-row-align: center;
+        align-self: center;
+  }
+
+  .bio-page__article._1 .bio-page__article--info:nth-child(3) {
+    padding: 0;
+    -ms-grid-row-align: start;
+        align-self: start;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+
+  .bio-page__article._2 {
+    padding: 15px 0;
+  }
+
+  .bio-page__article._2 picture {
+    display: block;
+    width: 43%;
+    float: right;
+    padding-left: 50px;
+  }
+
+  .bio-page__article._2 .bio-page__article--title {
+    padding-top: 30px;
+  }
+
+  .bio-page__article._2 .bio-page__article--img {
+    display: block;
+  }
+
+  .bio-page__article--bg-img {
+    -webkit-transform: translate(0, -25%);
+            transform: translate(0, -25%);
+  }
+
+  .bio-page__article--title {
+    margin-bottom: 10px;
+  }
+
+  .bio-page__article--title._large {
+    font-size: 2.1875rem;
+  }
+
+  .bio-page__article--text {
+    font-size: 1rem;
   }
 }
 
@@ -4989,6 +5269,72 @@ body._popup-active {
     padding-top: 40px;
   }
 
+  .bio-page__content {
+    padding-top: 50px;
+  }
+
+  .bio-page__intro--bg {
+    padding-top: 60.5%;
+  }
+
+  .bio-page__intro--text {
+    font-size: 1.125rem;
+    padding-bottom: 50%;
+    padding-top: 30px;
+  }
+
+  .bio-page__intro--text p {
+    padding: 10px 0;
+  }
+
+  .bio-page__intro--text p::after {
+    width: 20%;
+    padding-top: 50%;
+  }
+
+  .bio-page__article._1 .bio-page__article--image {
+    padding-left: 16%;
+  }
+
+  .bio-page__article._1 .bio-page__article--info:nth-child(2) {
+    -ms-grid-row-align: end;
+        align-self: end;
+  }
+
+  .bio-page__article._2 .bio-page__article--content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 56% 38%;
+    grid-template-columns: 56% 38%;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .bio-page__article._2 picture {
+    -ms-grid-column: 2;
+    grid-column: 2/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-row: 1/4;
+    width: auto;
+    float: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bio-page__article._2 .bio-page__article--img {
+    flex: 0 1 39%;
+  }
+
+  .bio-page__article--title._large {
+    font-size: 3.4375rem;
+  }
+
+  .bio-page__article--text {
+    font-size: 1.125rem;
+  }
+
   .footer__nav {
     align-items: center;
   }
@@ -5043,6 +5389,17 @@ body._popup-active {
 
   .gallery__item._large {
     width: 50%;
+  }
+
+  .bio-page__article._1 .bio-page__article--image {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+  }
+
+  .bio-page__article._1 .bio-page__article--info:nth-child(3) {
+    grid-column: auto;
+    padding: 15px 0 15px 30px;
   }
 }
 
@@ -5104,6 +5461,15 @@ body._popup-active {
   .round-link__btn {
     font-size: 1.125rem;
     margin-top: -35px;
+  }
+
+  .bio-page__content {
+    padding-top: 0;
+    padding-bottom: 100px;
+  }
+
+  .bio-page__intro--content {
+    padding-top: 4%;
   }
 }
 
@@ -5197,6 +5563,22 @@ body._popup-active {
     margin: -3% 0 -5% 0;
   }
 
+  .bio-page__article._1 .bio-page__article--info:nth-child(2) {
+    padding: 15px 0 15px 100px;
+  }
+
+  .bio-page__article._1 .bio-page__article--info:nth-child(3) {
+    padding: 15px 0 15px 100px;
+  }
+
+  .bio-page__article._2 .bio-page__article--content {
+    padding-left: 65px;
+  }
+
+  .bio-page__article._2 picture {
+    padding-left: 100px;
+  }
+
   .footer__nav--link {
     font-weight: 600;
     font-size: 1.125rem;
@@ -5228,11 +5610,23 @@ body._popup-active {
     padding-top: 70px;
     padding-right: 40px;
   }
+
+  .bio-page__article._1 {
+    padding: 0;
+  }
+
+  .bio-page__article._2 {
+    padding: 0;
+  }
 }
 
 @media (min-width: 1800px) {
   .main-intro__info {
     padding: 125px 30px;
+  }
+
+  .bio-page__article._1 {
+    margin-top: -6%;
   }
 }
 

@@ -75,6 +75,16 @@
     @include _992 {
         font-size: 2.5rem;
     }
+
+    & strong {
+        color: var(--white);
+        
+        -webkit-text-stroke: 1px var(--dark-2);
+
+        @include _768 {
+            -webkit-text-stroke: 2px var(--dark-2);
+        }
+    }
     
     &._large {
         font-weight: 600;
