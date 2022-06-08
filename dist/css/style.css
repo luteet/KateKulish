@@ -3837,6 +3837,10 @@ body._popup-active {
   padding-top: 20px;
 }
 
+.bio-page {
+  padding-bottom: 15px;
+}
+
 .bio-page__intro {
   display: -ms-grid;
   display: grid;
@@ -4659,6 +4663,10 @@ body._popup-active {
 
   .spirituality-page__footer {
     padding-top: 30px;
+  }
+
+  .bio-page {
+    padding-bottom: 0;
   }
 
   .bio-page__content {

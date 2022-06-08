@@ -1,5 +1,8 @@
 .bio-page {
-
+    padding-bottom: 15px;
+    @include _768 {
+        padding-bottom: 0;
+    }
     // .bio-page__header
 
     &__header {
