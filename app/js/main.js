@@ -149,8 +149,51 @@ body.addEventListener('click', function (event) {
 
 
     }
+    
+
+    
+    let typeListBtn = thisTarget.closest('._type-list-btn');
+    if(typeListBtn) {
+      let typeList = document.querySelector('._type-list'),
+          typeBtnsList = document.querySelectorAll('._type-list-btn'),
+          typeBtn = (typeListBtn.classList.contains('_add-type')) ? true : false;
+
+      if(typeBtn) {
+        typeList.classList.add('_column-list');
+        typeBtnsList.forEach(thisBtn => {
+          thisBtn.classList.remove('_active');
+        })
+        typeListBtn.classList.add('_active');
+
+        localStorage.setItem('Kate-Kulish-auction-list-type', 'column');
+      } else {
+        typeList.classList.remove('_column-list');
+        typeBtnsList.forEach(thisBtn => {
+          thisBtn.classList.remove('_active');
+        })
+        typeListBtn.classList.add('_active');
+
+        localStorage.setItem('Kate-Kulish-auction-list-type', 'row')
+      }
+
+    }
+
+
+
+    let auctionMoreLink = thisTarget.closest('.auction__bid-table--more-link');
+    if(auctionMoreLink) {
+      event.preventDefault();
+      
+      let table = auctionMoreLink.parentNode.querySelector('.auction__bid-table');
+
+      table.classList.add('_all');
+      auctionMoreLink.classList.add('_hidden');
+
+    }
 
 })
+
+
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -239,9 +282,6 @@ let exhibitionsSlider = new Swiper('.exhibitions__slider', {
 
 });
 
-
-
-
 let paintingSliderGallery = new Swiper('.painting__picture-slider-gallery', {
   slidesPerView: 3,
   spaceBetween: 20,
@@ -255,9 +295,6 @@ let paintingSliderGallery = new Swiper('.painting__picture-slider-gallery', {
   }
   
 });
-
-
-
 
 let paintingSliderMain = new Swiper('.painting__picture-slider-main', {
   slidesPerView: 1,
@@ -297,8 +334,6 @@ let relatedPaintingsSlider = new Swiper('.related-paintings__slider', {
   }
 })
 
-
-
 let spiritualityGallerySlider = new Swiper('.spirituality-page__gallery-slider', {
   spaceBetween: 9,
   slidesPerView: 2,
@@ -333,12 +368,49 @@ let spiritualitySlider = new Swiper('.spirituality-page__slider', {
   },
 })
 
+let auctionSliderGallery = new Swiper('.auction__painting-slider-gallery', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  
+  breakpoints: {
+    768: {
+      direction: "vertical",
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+    992: {
+      direction: "vertical",
+      slidesPerView: 4,
+      spaceBetween: 0,
+    }
+  }
+  
+});
+
+let auctionSliderMain = new Swiper('.auction__painting-slider-main', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  effect: "fade",
+  autoHeight: true,
+  navigation: {
+    nextEl: '.swiper-button-next#auction-painting-arrow-next',
+    prevEl: '.swiper-button-prev#auction-painting-arrow-prev',
+},
+  pagination: {
+    el: '.swiper-pagination#auction-painting-pagination',
+    clickable: true,
+  },
+  thumbs: {
+    swiper: auctionSliderGallery,
+  }
+});
+
 window.onload = function() {
   if(paintingSliderMain) paintingSliderMain.update();
   if(spiritualitySlider) spiritualitySlider.update();
+  if(auctionSliderMain) auctionSliderMain.update();
 }
 
-//document.addEventListener('domco')
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -354,6 +426,57 @@ wow.init();
 // =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
 
 */
+
+
+/*
+<div class="timer" data-timer-year="" data-timer-month="" data-timer-day="" data-timer-hour="" data-timer-minute="">
+    <span class="timer-days"><span class="timer-days-value"></span></d>
+    <span class="timer-hours"><span class="timer-hours-value"></span></span>
+    <span class="timer-minutes"><span class="timer-minutes-value"></span></span>
+    <span class="timer-seconds"><span class="timer-seconds-value"></span></span>
+</div>
+*/
+
+function timer() {
+  const timerElems = document.querySelectorAll('.timer');
+
+  let deadline;
+
+  timerElems.forEach(thisTimerElem => {
+
+    deadline = new Date(
+
+      thisTimerElem.dataset.timerYear,
+      Number(thisTimerElem.dataset.timerMonth - 1),
+      thisTimerElem.dataset.timerDay,
+      thisTimerElem.dataset.timerHour,
+      Number(thisTimerElem.dataset.timerMinute) + 1);
+
+    const day = thisTimerElem.querySelector('.timer-days-value'),
+      hour = thisTimerElem.querySelector('.timer-hours-value'),
+      minute = thisTimerElem.querySelector('.timer-minutes-value'),
+      second = thisTimerElem.querySelector('.timer-seconds-value');
+
+    const diff = deadline - new Date(),
+      days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0,
+      hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0,
+      minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0,
+      seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+
+      if(day) day.textContent = days.toString();
+      hour.textContent = hours.toString();
+      minute.textContent = minutes.toString();
+      second.textContent = seconds.toString();
+
+  });
+}
+
+if(document.querySelectorAll('.timer').length) {
+  setInterval(() => {
+    timer();
+  },1000)
+}
+
 
 /* function getCoords(elem) {
   var box = elem.getBoundingClientRect();

@@ -1,0 +1,30 @@
+<section class="related-paintings">
+    <div class="related-paintings__container _container">
+        <h2 class="related-paintings__title _title _large">
+            @@title
+        </h2>
+        <div class="related-paintings__block">
+            <div class="related-paintings__slider swiper">
+                <ul class="related-paintings__slider--list swiper-wrapper">
+                    @@loop("gallery/_gallery-card.html", [
+
+                        {"image": '1', "class": 'related-paintings__slider--card swiper-slide'},
+                        {"image": '2', "class": 'related-paintings__slider--card swiper-slide'},
+                        {"image": '3', "class": 'related-paintings__slider--card swiper-slide'},
+                        {"image": '4', "class": 'related-paintings__slider--card swiper-slide'},
+
+                        {"image": '1', "class": 'related-paintings__slider--card swiper-slide'},
+                        {"image": '2', "class": 'related-paintings__slider--card swiper-slide'},
+                        {"image": '3', "class": 'related-paintings__slider--card swiper-slide'},
+                        {"image": '4', "class": 'related-paintings__slider--card swiper-slide'},
+
+                    ])
+                </ul>
+            </div>
+            <div class="related-paintings__slider--navigation">
+                <button class="related-paintings__slider--arrow swiper-button-prev _slider-round-arrow-btn _prev" id="related-paintings-arrow-prev"></button>
+                <button class="related-paintings__slider--arrow swiper-button-next _slider-round-arrow-btn _next" id="related-paintings-arrow-next"></button>
+            </div>
+        </div>
+    </div>
+</section>

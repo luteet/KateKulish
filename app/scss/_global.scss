@@ -171,17 +171,25 @@ body {
     }
 
     &._min {
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
         text-align: center;
 
-        padding: 16px;
+        padding: 12px 5px;
 
         font-size: 1rem;
         font-weight: 500;
         line-height: 100%;
         
+    }
+
+    &._alt-min {
+        font-size: 1.125rem;
+        padding: 15px 5px;
+    }
+
+    &._super-min {
+        font-size: 0.875rem;
+        font-weight: 400;
+        padding: 10px;
     }
 
     transition: background .2s ease-in-out, box-shadow .2s ease-in-out, color .2s ease-in-out, border .2s ease-in-out;

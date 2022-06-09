@@ -1,0 +1,88 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'Auction',
+})
+
+<main class="main">
+    <section class="auction-list page-section">
+        <div class="auction-list__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/auction-list/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/auction-list/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/auction-list/header-bg-mob.webp" type="image/webp">
+                    <img src="img/auction-list/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <div class="page-section__header--container _container">
+                <h1 class="page-section__header--main-title _page-title">
+                    Auction
+                </h1>
+            </div>
+        </div>
+        <div class="auction-list__content">
+            <div class="auction-list__content--container _container">
+                <div class="auction-list__content--header">
+                    <h2 class="auction-list__title _title _large">
+                        Popular auctions
+                    </h2>
+                    <div class="auction-list__result">
+                        64 objects
+                    </div>
+                    <div class="auction-list__type-list">
+                        <button class="auction-list__type-list--btn _type-list-btn _remove-type" type="button">
+                            <i class="auction-list__type-list--btn-icon _icon-menu"></i>
+                        </button>
+                        <button class="auction-list__type-list--btn _type-list-btn _add-type" type="button">
+                            <i class="auction-list__type-list--btn-icon _icon-more"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="auction-list__content--list _type-list">
+                    @@loop("html/auction-list/_auction-list-item.html", [
+                        {"painting": '1', "day": '15'},
+                        {"painting": '2', "day": '16'},
+                        {"painting": '3', "day": '17'},
+                        {"painting": '4', "day": '18'},
+                    ])
+                </ul>
+                <script>
+
+                    let list = document.querySelector('._type-list'),
+                        btnList = document.querySelectorAll('._type-list-btn');
+
+                    if(list) {
+                        if(localStorage.getItem('Kate-Kulish-auction-list-type') == 'column') {
+                            list.classList.add('_column-list');
+
+                            btnList.forEach(thisBtn => {
+                                thisBtn.classList.remove('_active');
+                            })
+
+                            document.querySelector('._type-list-btn._add-type').classList.add('_active');
+                        } else {
+                            list.classList.remove('_column-list');
+
+                            btnList.forEach(thisBtn => {
+                                thisBtn.classList.remove('_active');
+                            })
+
+                            document.querySelector('._type-list-btn._remove-type').classList.add('_active');
+                        }
+                    }
+
+                </script>
+                <div class="auction-list__content--footer">
+                    @@include("html/_page-pagination.html", {
+                        "class": 'auction-list__content--pagination'
+                    })
+                    @@include("html/_share-block.html", {
+                        "class": 'auction-list__content--share-block',
+                    })
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

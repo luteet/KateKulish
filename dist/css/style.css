@@ -1287,6 +1287,7 @@ button.swiper-pagination-bullet {
   --gray: #7C6E6E;
   --gray-2: #565656;
   --gray-light: #C5C5C5;
+  --gray-light-2: #9C9C9C;
   --light: #F5F5F5;
   --light-2: #E9E9E9;
   --light-3: #F1F1F1;
@@ -1299,6 +1300,7 @@ button.swiper-pagination-bullet {
   --green-light: #B5D3BB;
   --red: #D43535;
   --red-light: #EFB7B7;
+  --teal-light: #11A88A;
   --container-padding: 15px;
 }
 
@@ -1577,14 +1579,22 @@ body._popup-active {
 }
 
 ._btn._min {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
-  padding: 16px;
+  padding: 12px 5px;
   font-size: 1rem;
   font-weight: 500;
   line-height: 100%;
+}
+
+._btn._alt-min {
+  font-size: 1.125rem;
+  padding: 15px 5px;
+}
+
+._btn._super-min {
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 10px;
 }
 
 ._btn._transparent {
@@ -2640,13 +2650,14 @@ body._popup-active {
 
 .header__page-address--item {
   position: relative;
+  padding-left: 40px;
 }
 
 .header__page-address--item::before {
   content: ">";
   color: var(--white);
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 1px;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
@@ -2656,9 +2667,13 @@ body._popup-active {
   display: none;
 }
 
+.header__page-address--item:first-child {
+  padding-left: 15px;
+}
+
 .header__page-address--link {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 0;
   color: var(--white);
   font-size: 0.875rem;
   line-height: 114%;
@@ -3377,6 +3392,10 @@ body._popup-active {
   left: auto;
 }
 
+.painting__picture-slider-main--list {
+  min-height: 375px;
+}
+
 .painting__picture-slider-main--slide {
   position: relative;
   width: 100%;
@@ -3391,6 +3410,7 @@ body._popup-active {
   position: relative;
   text-align: right;
   width: 100%;
+  min-height: 100%;
 }
 
 .painting__picture-slider-main--slide-body::before {
@@ -3408,8 +3428,11 @@ body._popup-active {
   /* position: absolute;
   right: 0; top: 0; */
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 100%;
+  background: var(--dark);
+  min-height: 375px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .painting__picture-slider-main--navigation {
@@ -4145,6 +4168,826 @@ body._popup-active {
   display: block;
 }
 
+.contacts-page__list {
+  padding: 50px 0 40px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contacts-page__item {
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+
+.contacts-page__item._alt .contacts-page__item--body {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contacts-page__item--body {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--light) bottom/100% no-repeat;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contacts-page__item--icon {
+  margin-bottom: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0px 10px 25px rgba(157, 157, 157, 0.25);
+}
+
+.contacts-page__item--icon svg {
+  width: 45%;
+  height: auto;
+}
+
+.contacts-page__item--title {
+  margin-bottom: 3px;
+  color: var(--gray-2);
+  font-size: 0.75rem;
+  line-height: 150%;
+}
+
+.contacts-page__item--link {
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.contacts-page__item--social-link {
+  margin: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color, var(--accent));
+}
+
+.contacts-page__item--social-link svg {
+  width: 45%;
+  height: auto;
+}
+
+.auction-list__content {
+  padding: 40px 0 40px 0;
+}
+
+.auction-list__content--header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.auction-list__content--list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  gap: 15px 0;
+  margin-top: 20px;
+}
+
+.auction-list__content--list._column-list {
+  gap: 5px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.auction-list__content--list._column-list .auction-list__content--item {
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  gap: 5px;
+}
+
+.auction-list__content--item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  gap: 15px;
+}
+
+.auction-list__content--pagination {
+  margin-top: 20px;
+}
+
+.auction-list__content--share-block {
+  margin-top: 20px;
+}
+
+.auction-list__content--list._column-list .auction-list__item--info {
+  padding: 20px 10px 10px 10px;
+}
+
+.auction-list__content--list._column-list .auction-list__item--info-footer {
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 25px;
+}
+
+.auction-list__content--list._column-list .auction-list__item--btn {
+  width: 100%;
+  min-width: 100%;
+  margin-top: 15px;
+}
+
+.auction-list__content--list._column-list .auction-list__item--col {
+  width: 100%;
+}
+
+.auction-list__title {
+  flex: 1 1 100%;
+  margin-bottom: 18px;
+}
+
+.auction-list__result {
+  font-size: 0.875rem;
+}
+
+.auction-list__type-list {
+  display: flex;
+  margin: -7.5px;
+}
+
+.auction-list__type-list--btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 7.5px;
+  border-radius: 50%;
+  background: var(--light);
+  color: var(--dark-2);
+  border: 1px solid var(--light);
+  transition: border 0.2s ease-in-out;
+}
+
+.auction-list__type-list--btn._active {
+  border: 1px solid var(--dark-2);
+}
+
+.auction-list__type-list--btn:hover {
+  color: var(--accent);
+}
+
+.auction-list__type-list--btn-icon {
+  font-size: 20px;
+  transition: color 0.2s ease-in-out;
+}
+
+.auction-list__item--painting {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.auction-list__item--img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.auction-list__item--info {
+  padding: 15px 22px 16px 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--dark);
+}
+
+.auction-list__item--bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.auction-list__item--bg-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+}
+
+.auction-list__item--info-header {
+  flex: 1 1 auto;
+}
+
+.auction-list__item--title._large {
+  font-size: 0.9375rem;
+}
+
+.auction-list__item--descr {
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 150%;
+  color: var(--dark-3);
+}
+
+.auction-list__item--info-footer {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.auction-list__item--col {
+  display: flex;
+  flex-direction: column;
+}
+
+.auction-list__item--subtitle {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 156%;
+}
+
+.auction-list__item--price {
+  color: var(--dark-2);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 100%;
+}
+
+.auction-list__item--timer {
+  margin-top: 5px;
+  color: var(--gray-light-2);
+  font-size: 0.8125rem;
+}
+
+.auction-list__item--btn {
+  min-width: 135px;
+  font-size: 0.875rem;
+}
+
+.auction {
+  padding: 21px 0px 0 0;
+}
+
+.auction__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+}
+
+.auction__block--header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: 22px;
+}
+
+.auction__painting-name {
+  flex: 1 1 auto;
+  order: 1;
+}
+
+.auction__rating {
+  padding: 6px 15px;
+  margin: 5px 0;
+  color: var(--dark);
+  border: 1px solid var(--dark-2);
+  border-radius: 50px;
+  order: 3;
+}
+
+.auction__rating--value {
+  font-size: 1.25rem;
+  line-height: 100%;
+  margin-right: 5px;
+  margin-left: 3px;
+}
+
+.auction__id {
+  flex: 1 1 100%;
+  color: var(--gray-light-2);
+  margin-top: 3px;
+  order: 2;
+}
+
+.auction__painting {
+  position: relative;
+}
+
+.auction__painting-slider-gallery {
+  margin-top: 20px;
+}
+
+.auction__painting-slider-gallery--slide {
+  padding-top: 24%;
+  position: relative;
+  cursor: pointer;
+}
+
+.auction__painting-slider-gallery--slide-body {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.auction__painting-slider-gallery--slide-body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--dark);
+  z-index: 2;
+}
+
+.auction__painting-slider-gallery--slide-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.auction__painting-slider-main {
+  position: relative;
+}
+
+.auction__painting-slider-main--slide {
+  position: relative;
+  width: 100%;
+  /* padding-top: 84%; */
+  display: flex;
+  justify-content: end;
+}
+
+.auction__painting-slider-main--slide-body {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  min-height: 100%;
+}
+
+.auction__painting-slider-main--slide-body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--dark);
+  z-index: 2;
+}
+
+.auction__painting-slider-main--slide-img {
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.auction__painting-slider-main--navigation {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auction__painting-slider-main--pagination {
+  width: auto !important;
+}
+
+.auction__painting-slider-main--arrows {
+  display: inline-flex;
+}
+
+.auction__painting-slider-main--arrow {
+  margin: 0 6px;
+}
+
+.auction__info {
+  padding: 30px 30px 30px 0;
+  margin-top: 30px;
+  color: var(--dark-2);
+  position: relative;
+}
+
+.auction__info::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background: var(--light);
+  z-index: -1;
+}
+
+.auction__info--text {
+  font-size: 0.75rem;
+  line-height: 175%;
+}
+
+.auction__info--text p {
+  padding: 5px 0;
+}
+
+.auction__info--text li {
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+}
+
+.auction__info--text li::before {
+  content: "\e904";
+  font-family: "Kate-Kulish-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border: 1px solid var(--dark);
+  background: var(--white);
+  font-size: 50%;
+  margin-right: 9px;
+}
+
+.auction__aside {
+  margin-top: -31px;
+  padding-top: 60px;
+}
+
+.auction__aside--block {
+  margin-top: 31px;
+  padding: 11px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.auction__aside--block._block {
+  display: block;
+}
+
+.auction__aside--header {
+  background: var(--light);
+  color: var(--black);
+  padding: 15px;
+  width: 100%;
+}
+
+.auction__aside--title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 100%;
+  color: var(--black);
+}
+
+.auction__aside--timer {
+  display: inline-block;
+}
+
+.auction__aside--timer > * {
+  display: inline-block;
+  min-width: 40px;
+}
+
+.auction__aside--min-text {
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.auction__aside--row {
+  width: 100%;
+  border-top: 3px solid var(--light);
+  padding: 15px 5px;
+}
+
+.auction__aside--row._full-row {
+  flex: 1 1 100%;
+}
+
+.auction__aside--min-title {
+  font-size: 1rem;
+  line-height: 110%;
+  color: var(--black);
+  margin-bottom: 3px;
+}
+
+.auction__aside--status {
+  font-size: 0.875rem;
+}
+
+.auction__aside--status._status-1 {
+  color: var(--teal-light);
+}
+
+.auction__aside--status._status-2 {
+  color: var(--red);
+}
+
+.auction__aside--underline-span {
+  color: var(--gray-light-2);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  line-height: 131%;
+}
+
+.auction__aside--footer {
+  display: block;
+}
+
+.auction__aside--footer-row {
+  padding: 10px;
+}
+
+.auction__aside--footer-title {
+  font-size: 1rem;
+  line-height: 110%;
+  color: var(--black);
+  margin-bottom: 3px;
+}
+
+.auction__aside--footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  font-size: 50%;
+  margin-right: 5px;
+}
+
+.auction__aside--footer-text {
+  display: flex;
+  align-items: center;
+  color: var(--dark-2);
+  padding-top: 8px;
+}
+
+.auction__aside--footer-payment .payment-min__item {
+  width: 60px;
+  height: 34px;
+  flex: 0 1 60px;
+  border-radius: 5px;
+}
+
+.auction__aside--footer-payment .payment-min__item--img {
+  max-width: 75%;
+}
+
+.auction__aside--social-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+
+.auction__aside--social-item {
+  padding: 5px;
+}
+
+.auction__aside--social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background: var(--color, var(--accent));
+}
+
+.auction__aside--social-link svg {
+  width: 50%;
+}
+
+.auction__quick-bid--btn-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px -5px 8px -5px;
+}
+
+.auction__quick-bid--btn-list .auction__quick-bid--btn {
+  margin: 0 5px;
+  max-width: 227px;
+  flex: 1 1 auto;
+}
+
+.auction__quick-bid--btn {
+  flex: 0 1 auto;
+}
+
+.auction__quick-bid--row {
+  padding: 8px 0;
+}
+
+.auction__quick-bid--name {
+  font-size: 0.875rem;
+  line-height: 125%;
+  color: var(--black);
+}
+
+.auction__quick-bid--name span {
+  font-size: 0.6875rem;
+}
+
+.auction__quick-bid--min-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-top: 7px;
+  margin: -5px;
+}
+
+.auction__quick-bid--min-row > * {
+  margin: 5px;
+}
+
+.auction__quick-bid--label {
+  flex: 1 1 100%;
+  min-height: 42px;
+}
+
+.auction__quick-bid--input {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  border: 1px solid var(--dark-2);
+  padding: 12px 10px;
+  color: var(--dark-2);
+}
+
+.auction__bid-table {
+  width: 100%;
+  font-size: 0.75rem;
+  line-height: 129%;
+  margin: -6px 0 0 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.auction__bid-table--row:nth-child(-n+7) {
+  display: -ms-grid;
+  display: grid;
+}
+
+.auction__bid-table._all .auction__bid-table--row {
+  display: -ms-grid;
+  display: grid;
+}
+
+.auction__bid-table--row {
+  flex: 0 1 50%;
+  display: none;
+  -ms-grid-columns: 35% auto auto auto;
+  grid-template-columns: 35% auto auto auto;
+  padding: 3px 0;
+}
+
+.auction__bid-table--row > * {
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.auction__bid-table--date {
+  color: var(--gray);
+}
+
+.auction__bid-table--time {
+  color: var(--gray);
+}
+
+.auction__bid-table--price {
+  text-align: right;
+}
+
+.auction__bid-table--more-link {
+  text-decoration: underline;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.auction__bid-table--more-link:hover {
+  color: var(--accent-dark);
+}
+
+.auction__bid-table--more-link._hidden {
+  display: none;
+}
+
+.nft-page__content {
+  padding: 30px 0 40px 0;
+}
+
+.nft-page__content--text {
+  color: var(--gray-2);
+  font-size: 0.75rem;
+  line-height: 156%;
+  max-width: 1253px;
+}
+
+.nft-page__content--pagination {
+  padding-top: 40px;
+}
+
+.nft-page__list {
+  padding-top: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin: -10px -5px;
+}
+
+.nft-page__item {
+  padding: 10px 5px;
+  width: 100%;
+  /* flex: 50%;
+
+  @include _768 {
+      flex: 33.333%; width: 33.333%;
+  }
+
+  @include _992 {
+      flex: 20%; width: 20%;
+  }
+
+  @media(min-width: 1250px) {
+      flex: 16.6667%; width: 16.6667%;
+  } */
+}
+
+.nft-page__round-link .round-link__body {
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+
+.nft-page__round-link .round-link__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.nft-page__round-link .round-link__btn {
+  z-index: 2;
+}
+
 .footer {
   flex: 0 0 auto;
   background: var(--dark-2);
@@ -4300,6 +5143,27 @@ body._popup-active {
     grid-template-columns: 1fr 1fr;
   }
 
+  .contacts-page__item--icon {
+    margin-bottom: 11px;
+    width: 63px;
+    height: 63px;
+  }
+
+  .contacts-page__item--title {
+    margin-bottom: 3px;
+    font-size: 1.125rem;
+  }
+
+  .contacts-page__item--link {
+    font-size: 1.125rem;
+  }
+
+  .contacts-page__item--social-link {
+    margin: 6px;
+    width: 46px;
+    height: 46px;
+  }
+
   .footer__logo--img {
     width: 287px;
     height: 40px;
@@ -4325,6 +5189,14 @@ body._popup-active {
 @media (min-width: 600px) {
   .main-intro__bg {
     padding-top: 68.5%;
+  }
+
+  .auction__quick-bid--btn {
+    flex: 1 1 auto;
+  }
+
+  .auction__quick-bid--label {
+    flex: 1 1 auto;
   }
 }
 
@@ -4626,7 +5498,7 @@ body._popup-active {
     left: 0;
     top: 0;
     width: calc(20% - 15px);
-    height: calc(100% - 50px);
+    height: min(100% - 50px, 645px);
     z-index: 2;
     margin: -10px 0;
   }
@@ -4969,6 +5841,274 @@ body._popup-active {
   .faq-page__item--content {
     font-size: 1rem;
   }
+
+  .contacts-page__list {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px 0 60px 0;
+  }
+
+  .auction-list__content {
+    padding: 70px 0 61px 0;
+  }
+
+  .auction-list__content--list {
+    gap: 27px;
+    margin-top: 30px;
+  }
+
+  .auction-list__content--list._column-list {
+    gap: 27px;
+  }
+
+  .auction-list__content--list._column-list .auction-list__content--item {
+    gap: 23px;
+  }
+
+  .auction-list__content--item {
+    gap: 23px;
+    -ms-grid-columns: 32.2% auto;
+    grid-template-columns: 32.2% auto;
+  }
+
+  .auction-list__content--pagination {
+    margin-top: 30px;
+  }
+
+  .auction-list__content--share-block {
+    margin-top: 30px;
+  }
+
+  .auction-list__content--list._column-list .auction-list__item--info {
+    padding: 25px 16px 20px 16px;
+  }
+
+  .auction-list__content--list._column-list .auction-list__item--info-footer {
+    padding-top: 50px;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .auction-list__content--list._column-list .auction-list__item--btn {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .auction-list__content--list._column-list .auction-list__item--col {
+    width: auto;
+  }
+
+  .auction-list__title {
+    margin-bottom: 33px;
+  }
+
+  .auction-list__result {
+    font-size: 1rem;
+  }
+
+  .auction-list__item--info {
+    padding: 5px 16px 16px 16px;
+  }
+
+  .auction-list__item--title._large {
+    font-size: 1.25rem;
+  }
+
+  .auction-list__item--descr {
+    font-size: 0.875rem;
+  }
+
+  .auction-list__item--info-footer {
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 30px;
+  }
+
+  .auction-list__item--subtitle {
+    font-size: 1rem;
+  }
+
+  .auction-list__item--price {
+    font-size: 1.5rem;
+  }
+
+  .auction-list__item--timer {
+    font-size: 0.9375rem;
+  }
+
+  .auction-list__item--btn {
+    font-size: 1rem;
+  }
+
+  .auction {
+    padding: 36px 0px 0 0;
+  }
+
+  .auction__block--header {
+    padding-bottom: 0px;
+    flex-direction: row;
+  }
+
+  .auction__rating {
+    order: 2;
+    padding: 10px 15px;
+    margin: 0;
+  }
+
+  .auction__id {
+    order: 3;
+  }
+
+  .auction__painting {
+    margin-top: 25px;
+  }
+
+  .auction__painting-slider-gallery {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 132px;
+    height: min(100% - 85px, 845px);
+    z-index: 2;
+    margin: -10px 0;
+  }
+
+  .auction__painting-slider-gallery--list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .auction__painting-slider-gallery--slide {
+    padding-top: 0;
+  }
+
+  .auction__painting-slider-gallery--slide-body {
+    left: 0;
+    top: 10px;
+    width: 100%;
+    height: calc(100% - 20px);
+  }
+
+  .auction__painting-slider-main--list {
+    min-height: 375px;
+  }
+
+  .auction__painting-slider-main--slide-body {
+    width: calc(100% - 155px);
+  }
+
+  .auction__painting-slider-main--slide-img {
+    min-height: 375px;
+  }
+
+  .auction__painting-slider-main--navigation {
+    height: 44px;
+    margin-top: 26px;
+  }
+
+  .auction__painting-slider-main--pagination {
+    -webkit-transform: translate(0, -60px);
+            transform: translate(0, -60px);
+  }
+
+  .auction__info--text {
+    font-size: 0.875rem;
+  }
+
+  .auction__aside--header {
+    padding: 25px 15px;
+  }
+
+  .auction__aside--title {
+    font-size: 1.875rem;
+  }
+
+  .auction__aside--timer > * {
+    min-width: 50px;
+  }
+
+  .auction__aside--min-text {
+    font-size: 1rem;
+    margin-top: 7px;
+  }
+
+  .auction__aside--row {
+    flex: 0 1 50%;
+  }
+
+  .auction__aside--min-title {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+  }
+
+  .auction__aside--status {
+    font-size: 1rem;
+  }
+
+  .auction__aside--underline-span {
+    font-size: 1rem;
+  }
+
+  .auction__aside--footer-title {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+  }
+
+  .auction__quick-bid--name {
+    font-size: 1rem;
+  }
+
+  .auction__quick-bid--name span {
+    font-size: 0.75rem;
+  }
+
+  .auction__bid-table {
+    margin: -6px -20px 0 -20px;
+    flex-direction: row;
+  }
+
+  .auction__bid-table::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    height: calc(100% - 30px);
+    width: 3px;
+    background: var(--light);
+  }
+
+  .auction__bid-table--row {
+    padding: 6px 20px;
+  }
+
+  .auction__bid-table--more-link {
+    font-size: 1rem;
+  }
+
+  .nft-page__content {
+    padding: 30px 0 60px 0;
+  }
+
+  .nft-page__content--text {
+    font-size: 1rem;
+  }
+
+  .nft-page__content--pagination {
+    padding-top: 50px;
+  }
+
+  .nft-page__list {
+    padding-top: 30px;
+    margin: -15px -10px;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .nft-page__item {
+    padding: 15px 10px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -5032,6 +6172,15 @@ body._popup-active {
 
   ._content-title {
     font-size: 2.8125rem;
+  }
+
+  ._slider-alt-arrow._large {
+    width: 70px;
+    height: 70px;
+  }
+
+  ._slider-alt-arrow._large::after {
+    font-size: 1.25rem;
   }
 
   ._slider-round-arrow-btn {
@@ -5343,7 +6492,7 @@ body._popup-active {
   }
 
   .painting__picture-slider-gallery {
-    height: calc(100% - 36px);
+    height: min(100% - 36px, 624px);
   }
 
   .painting__picture-slider-main--navigation {
@@ -5568,6 +6717,141 @@ body._popup-active {
     font-size: 1.125rem;
   }
 
+  .contacts-page__list {
+    padding: 75px 0 120px 0;
+  }
+
+  .contacts-page__item--icon {
+    margin-bottom: 21px;
+    width: 84px;
+    height: 84px;
+  }
+
+  .contacts-page__item--title {
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+  }
+
+  .contacts-page__item--link {
+    font-size: 1.25rem;
+  }
+
+  .contacts-page__item--social-link {
+    margin: 8px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .auction-list__content {
+    padding: 82px 0 90px 0;
+  }
+
+  .auction-list__content--pagination {
+    margin-top: 62px;
+  }
+
+  .auction-list__content--share-block {
+    margin-top: 40px;
+  }
+
+  .auction-list__content--list._column-list .auction-list__item--info {
+    padding: 25px 20px 30px 30px;
+  }
+
+  .auction-list__title {
+    margin-bottom: 40px;
+  }
+
+  .auction-list__item--info {
+    padding: 40px 50px 46px 60px;
+  }
+
+  .auction-list__item--title._large {
+    font-size: 3.4375rem;
+  }
+
+  .auction-list__item--descr {
+    font-size: 1.25rem;
+  }
+
+  .auction-list__item--info-footer {
+    padding-top: 50px;
+  }
+
+  .auction-list__item--subtitle {
+    font-size: 1.125rem;
+  }
+
+  .auction-list__item--price {
+    font-size: 3.4375rem;
+  }
+
+  .auction-list__item--timer {
+    font-size: 1rem;
+  }
+
+  .auction-list__item--btn {
+    font-size: 1.25rem;
+    min-width: 216px;
+  }
+
+  .auction {
+    padding: 67px 0px 0 0;
+  }
+
+  .auction__block--header {
+    padding-bottom: 20px;
+  }
+
+  .auction__id {
+    margin-top: 0;
+  }
+
+  .auction__painting {
+    margin-top: 0;
+  }
+
+  .auction__painting-slider-gallery {
+    width: 132px;
+    height: min(100% - 92px, 824px);
+  }
+
+  .auction__painting-slider-main--navigation {
+    margin-top: 35px;
+  }
+
+  .auction__painting-slider-main--pagination {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+
+  .auction__info--text {
+    font-size: 1rem;
+  }
+
+  .nft-page__content {
+    padding: 70px 0 90px 0;
+  }
+
+  .nft-page__content--text {
+    font-size: 1.125rem;
+  }
+
+  .nft-page__content--pagination {
+    padding-top: 90px;
+  }
+
+  .nft-page__list {
+    padding-top: 80px;
+    margin: -15px;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .nft-page__item {
+    padding: 15px;
+  }
+
   .footer__nav {
     align-items: center;
   }
@@ -5636,6 +6920,54 @@ body._popup-active {
   }
 }
 
+@media (min-width: 1200px) {
+  .auction__wrapper {
+    -ms-grid-columns: 75.5% 24.5%;
+    grid-template-columns: 75.5% 24.5%;
+  }
+
+  .auction__block {
+    padding-right: 18px;
+  }
+
+  .auction__aside {
+    padding-top: 0px;
+  }
+
+  .auction__aside--block {
+    flex-direction: column;
+  }
+
+  .auction__aside--row {
+    flex: 0 1 auto;
+  }
+
+  .auction__aside--row._full-row {
+    flex: 0 1 auto;
+  }
+
+  .auction__bid-table {
+    display: block;
+    font-size: 0.875rem;
+    flex-direction: column;
+    margin: -6px 0 0 0;
+  }
+
+  .auction__bid-table::before {
+    display: none;
+  }
+
+  .auction__bid-table--row {
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    padding: 5px 0;
+  }
+
+  .auction__bid-table--date {
+    text-align: right;
+  }
+}
+
 @media (min-width: 1250px) {
   .nft-marketplace__bg {
     margin-top: -23vw;
@@ -5672,6 +7004,17 @@ body._popup-active {
 
   .painting__info--span {
     font-size: 1rem;
+  }
+
+  .contacts-page__list {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+  }
+
+  .nft-page__list {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -5812,6 +7155,15 @@ body._popup-active {
     padding-left: 100px;
   }
 
+  .auction__bid-table--row {
+    -ms-grid-columns: 35% auto auto auto;
+    grid-template-columns: 35% auto auto auto;
+  }
+
+  .auction__bid-table--date {
+    text-align: left;
+  }
+
   .footer__nav--link {
     font-weight: 600;
     font-size: 1.125rem;
@@ -5825,6 +7177,11 @@ body._popup-active {
 
   .gallery-page__filter--item {
     flex: 0 1 25%;
+  }
+
+  .contacts-page__list {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -5850,6 +7207,14 @@ body._popup-active {
 
   .bio-page__article._2 {
     padding: 0;
+  }
+
+  .nft-page__list {
+    margin: -25px;
+  }
+
+  .nft-page__item {
+    padding: 25px;
   }
 }
 

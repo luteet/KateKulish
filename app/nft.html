@@ -1,0 +1,54 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'NFT',
+})
+
+<main class="main">
+    <section class="nft-page page-section">
+        <div class="nft-page__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/nft/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/nft/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/nft/header-bg-mob.webp" type="image/webp">
+                    <img src="img/nft/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <div class="page-section__header--container _container">
+                <h1 class="page-section__header--main-title _page-title">
+                    NFT
+                </h1>
+            </div>
+        </div>
+        <div class="nft-page__content">
+            <div class="nft-page__content--container _container">
+                <div class="nft-page__content--text">
+                    <p>
+                        An NFT is a digital asset that represents real-world objects like art, music, in-game items and videos. They are bought and sold online, frequently with cryptocurrency, and they are generally encoded with the same underlying software as many cryptos.
+                    </p>
+                </div>
+                <ul class="nft-page__list">
+                    @@loop("html/nft/_nft-item.html", [
+                        {"logo": '1'},
+                        {"logo": '2'},
+                        {"logo": '3'},
+                        {"logo": '4'},
+                        {"logo": '1'},
+                        {"logo": '2'},
+                        {"logo": '3'},
+                        {"logo": '4'},
+                        {"logo": '1'},
+                        {"logo": '2'},
+                        {"logo": '3'},
+                        {"logo": '4'},
+                    ])
+                </ul>
+                @@include("html/_page-pagination.html", {
+                    "class": 'nft-page__content--pagination'
+                })
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")
