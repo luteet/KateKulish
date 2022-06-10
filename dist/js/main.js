@@ -167,18 +167,18 @@ function basketPriceCount() {
 
 basketPriceCount();
 
+let magicGrid;
 if(document.querySelector('.painting-product__list')) {
-  let magicGrid = new MagicGrid({
+  magicGrid = new MagicGrid({
     container: ".painting-product__list",
     animate: true,
-    gutter: 20,
+    gutter: 15,
     static: true,
     useMin: true
   });
 
   magicGrid.listen();
 }
-
 
 
 
@@ -618,7 +618,6 @@ if(document.querySelector('.auction__painting-slider-main')) {
   });  
 }
 
-
 window.onload = function() {
   if(paintingSliderMain) paintingSliderMain.update();
   if(spiritualitySlider) spiritualitySlider.update();
@@ -641,15 +640,6 @@ wow.init();
 
 */
 
-
-/*
-<div class="timer" data-timer-year="" data-timer-month="" data-timer-day="" data-timer-hour="" data-timer-minute="">
-    <span class="timer-days"><span class="timer-days-value"></span></d>
-    <span class="timer-hours"><span class="timer-hours-value"></span></span>
-    <span class="timer-minutes"><span class="timer-minutes-value"></span></span>
-    <span class="timer-seconds"><span class="timer-seconds-value"></span></span>
-</div>
-*/
 
 function timer() {
   const timerElems = document.querySelectorAll('.timer');
@@ -691,95 +681,3 @@ if(document.querySelectorAll('.timer').length) {
   },1000)
 }
 
-/* function getCoords(elem) {
-  var box = elem.getBoundingClientRect();
-
-  return {
-  top: box.top + pageYOffset,
-  left: box.left + pageXOffset
-  };
-
-}
-
-function scrollPage() {
-
-const offsetCheckJs = document.querySelector('.offset-check-js');
-let top = [getCoords(offsetCheckJs).top, false];
-
-header.classList.add('_loaded');
-
-function scrollPageFunc() {
-top[0] = getCoords(offsetCheckJs).top;
-
-if(top[0] >= 500 && top[1] == false) {
-
-    top[1] = true;
-    header.style.setProperty('--pos', '-100%');
-
-    setTimeout(function() {
-        header.classList.add('_active');
-        header.style.setProperty('--pos', '0%');
-    },200);
-
-} else if(top[0] <= 500 && top[1] == true) {
-
-    top[1] = false;
-    header.style.setProperty('--pos', '-100%');
-
-    setTimeout(function() {
-        header.style.setProperty('--pos', '0%');
-        header.classList.remove('_active');
-        
-    },200);
-
-}
-}
-
-scrollPageFunc();
-
-window.onscroll = scrollPageFunc;
-
-}
-
-scrollPage(); */
-
-
-
-let resizeCheck = {}, windowSize;
-
-function resizeCheckFunc(size, minWidth, maxWidth) {
-  if (windowSize <= size && (resizeCheck[String(size)] == true || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != false) {
-    resizeCheck[String(size)] = false;
-    maxWidth(); // < size
-  }
-
-  if (windowSize >= size && (resizeCheck[String(size)] == false || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != true) {
-    resizeCheck[String(size)] = true;
-    minWidth(); // > size
-  }
-}
-
-
-
-/* function resize() {
-
-  windowSize = window.innerWidth;
-
-  wrapper.style.setProperty('--header-height', header.offsetHeight + 'px');
-
-  resizeCheckFunc(992,
-    function () {  // screen > 992px
-
-      
-
-    },
-    function () {  // screen < 992px
-
-      
-
-  });
-}
-
-resize();
-
-window.onresize = resize; */
