@@ -1,0 +1,237 @@
+@@include("html/_header.html")
+
+<main class="main">
+    <section class="main-intro">
+        <div class="main-intro__bg">
+            <picture>
+                <source srcset="img/main-page/intro/bg.webp" type="image/webp" media="(min-width: 992px)">
+                <source srcset="img/main-page/intro/bg-table.webp" type="image/webp" media="(min-width: 600px)">
+                <source srcset="img/main-page/intro/bg-mob.webp" type="image/webp">
+                <img src="img/main-page/intro/bg.png" alt="" width="500" loading="lazy" class="main-intro__bg--img">
+            </picture>
+        </div>
+        <div class="main-intro__container _container">
+            <div class="main-intro__info">
+                <h1 class="main-intro__title _main-title">
+                    Kate<br>kulish
+                </h1>
+                <ul class="main-intro__list">
+                    <li class="main-intro__list--item">
+                        Pureness
+                    </li>
+                    <li class="main-intro__list--item">
+                        Energy
+                    </li>
+                    <li class="main-intro__list--item">
+                        Practicing mindfulness
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="gallery _section-padding">
+        <div class="gallery__container _container">
+            <h2 class="gallery__title _section-title">
+                Gallery
+            </h2>
+        </div>
+        <div class="gallery__slider swiper">
+            <ul class="gallery__list swiper-wrapper">
+                @@loop("html/main-page/gallery/_gallery-slide.html", [
+                    {"image": '5', "class": ''},
+                    {"image": '2', "class": ''},
+                    {"image": '3', "class": '_large'},
+                    {"image": '4', "class": ''},
+                    {"image": '5', "class": ''},
+                    {"image": '1', "class": '_large'},
+                    {"image": '2', "class": ''},
+                    {"image": '3', "class": ''},
+                ])
+            </ul>
+            <div class="gallery__navigation _slider-navigation">
+                <div class="gallery__navigation--body _slider-navigation-body">
+                    <div class="gallery__navigation--arrow swiper-button-prev _slider-arrow"></div>
+                    <div class="gallery__navigation--pagination swiper-pagination _slider-pagination"></div>
+                    <div class="gallery__navigation--arrow swiper-button-next _slider-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="new-painting _section-padding">
+        <div class="new-painting__container _container">
+            <h2 class="new-painting__section-title _section-title _txt-center">
+                New Painting
+            </h2>
+            <div class="new-painting__picture">
+                <picture>
+                    <source srcset="img/main-page/new-painting/image.webp" type="image/webp">
+                    <img src="img/main-page/new-painting/image.jpg" alt="" width="600" loading="lazy" class="new-painting__picture--img _border">
+                </picture>
+            </div>
+            <div class="new-painting__footer">
+                <span class="new-painting__line"></span>
+                <h3 class="new-painting__name">
+                    Name of the painting
+                    <time class="new-painting__datetime" datetime="2020-03-15">(15.03.2020)</time>
+                </h3>
+                <strong class="new-painting__price">
+                    330.00 USD
+                </strong>
+                <a href="#" class="new-painting__btn _btn">
+                    Buy
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="philosophy _section-padding">
+        <div class="philosophy__container _container">
+            <div class="philosophy__content">
+                <div class="philosophy__row _1">
+                    <div class="philosophy__image">
+                        <picture>
+                            <source srcset="img/main-page/philosophy/round-image-1.webp" type="image/webp">
+                            <img src="img/main-page/philosophy/round-image-1.png" alt="" loading="lazy" width="641" height="641" class="philosophy__image--img">
+                        </picture>
+                    </div>
+                    <div class="philosophy__info">
+                        <h2 class="philosophy__section-title _section-title">
+                            Philosophy
+                        </h2>
+                        <div class="philosophy__text">
+                            <p>
+                                My name is Kate Kulish. I am an artist from Ukraine. For a long time, I have been living in Bali, Indonesia. I live my life based on the teachings of Buddhist philosophy by practicing mindfulness, non-violence, and compassion.
+                            </p>
+                            <p>
+                                The intention of my art is to reflect my inner calm. My technique has been shaped over the years by visiting many European museums and studying painting at university. I was strongly influenced by the works of masters, such as Gustav Klimt, Raphael, and Picasso. The main topics of my paintings are women, abstract landscapes, and decomposed cityscapes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy__row _2">
+                    <div class="philosophy__image">
+                        <picture>
+                            <source srcset="img/main-page/philosophy/round-image-2.webp" type="image/webp">
+                            <img src="img/main-page/philosophy/round-image-2.png" alt="" loading="lazy" width="641" height="641" class="philosophy__image--img">
+                        </picture>
+                    </div>
+                    <div class="philosophy__info">
+                        <h3 class="philosophy__title _content-title">
+                            Women
+                        </h3>
+                        <div class="philosophy__text">
+                            <p>
+                                In my paintings, women represent an object of pureness. They are a concentration of beauty and the divine. I create faces of women as archaic objects without individuality of character. This helps to bring me to explore all the qualities of pureness and divine creation, such as that seen in Madonna del Prato (Raphael).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="philosophy__info">
+                        <h3 class="philosophy__title _content-title">
+                            Abstract Landscapes
+                        </h3>
+                        <div class="philosophy__text">
+                            <p>
+                                If we remove some forms of standard objects, all that remains is pure energy, which merges everything together. Everything passes from one to another and is constantly moving. This energy fills everything around us. Everything that we see serves as a vessel for this energy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy__row _3">
+                    <div class="philosophy__info">
+                        <h3 class="philosophy__title _content-title">
+                            Decomposed Cityscapes
+                        </h3>
+                        <div class="philosophy__text">
+                            <p>
+                                For me, the city represents one of the highest manifestations of unity among people. The most important part of any city is its soul. Each of my cityscapes is an experiment in decomposing the city and bringing all the details together. After connecting all the details in a completely unthinkable sequence, with an incomprehensible perspective, one thing remains unchanged: the soul of the city. You can change all the details, but the soul will remain unchanged and unshakable.
+                            </p>
+                            <p>
+                                In fact, I understand this more than ever, as since many of the cities in my beloved Ukraine have been destroyed. Regardless, the soul of each city remains unshakable. The cities continue to live, even if 90 buildings have been partially destroyed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="philosophy__image">
+                        <picture>
+                            <source srcset="img/main-page/philosophy/round-image-3.webp" type="image/webp">
+                            <img src="img/main-page/philosophy/round-image-3.png" alt="" loading="lazy" width="641" height="641" class="philosophy__image--img">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="nft-marketplace">
+        <div class="nft-marketplace__bg">
+            <picture>
+                <source srcset="img/main-page/nft-marketplace/bg.webp" type="image/webp" media="(min-width: 1250px)">
+                <source srcset="img/main-page/nft-marketplace/bg-table.webp" type="image/webp" media="(min-width: 500px)">
+                <source srcset="img/main-page/nft-marketplace/bg-mob.webp" type="image/webp">
+                <img src="img/main-page/nft-marketplace/bg.png" alt="" width="300" loading="lazy" class="nft-marketplace__bg--img">
+            </picture>
+        </div>
+        <div class="nft-marketplace__container _container">
+            <div class="nft-marketplace__info">
+                <h2 class="nft-marketplace__section-title _section-title _light">
+                    NFT<br>Marketplace
+                </h2>
+                <div class="nft-marketplace__text">
+                    An NFT is a digital asset that represents real-world objects like art, music, in-game items and videos. They are bought and sold online, frequently with cryptocurrency, and they are generally encoded with the same underlying software as many cryptos.
+                </div>
+            </div>
+            <div class="nft-marketplace__slider swiper">
+                <ul class="nft-marketplace__list swiper-wrapper">
+                    @@loop("html/main-page/nft-marketplace/_nft-marketplace-item.html", [
+                        {"logo": '1'},
+                        {"logo": '2'},
+                        {"logo": '3'},
+                        {"logo": '4'},
+                        {"logo": '1'},
+                        {"logo": '2'},
+                        {"logo": '3'},
+                        {"logo": '4'},
+                    ])
+                </ul>
+                <div class="nft-marketplace__navigation _slider-navigation">
+                    <div class="nft-marketplace__navigation--body _slider-navigation-body">
+                        <div class="nft-marketplace__navigation--arrow swiper-button-prev _slider-arrow"></div>
+                        <div class="nft-marketplace__navigation--pagination swiper-pagination _slider-pagination"></div>
+                        <div class="nft-marketplace__navigation--arrow swiper-button-next _slider-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="exhibitions _section-padding">
+        <div class="exhibitions__container _container">
+            <h2 class="exhibitions__section-title _section-title _txt-center">
+                Exhibitions
+            </h2>
+            <div class="exhibitions__slider swiper">
+                <ul class="exhibitions__list swiper-wrapper">
+                    @@loop("html/main-page/exhibitions/_exhibitions-item.html", [
+
+                        {"image": '1'},
+                        {"image": '2'},
+                        {"image": '3'},
+
+                        {"image": '1'},
+                        {"image": '2'},
+                        {"image": '3'},
+
+                    ])
+                </ul>
+                <div class="exhibitions__navigation _slider-navigation">
+                    <div class="exhibitions__navigation--body _slider-navigation-body">
+                        <div class="exhibitions__navigation--arrow swiper-button-prev _slider-arrow"></div>
+                        <div class="exhibitions__navigation--pagination swiper-pagination _slider-pagination"></div>
+                        <div class="exhibitions__navigation--arrow swiper-button-next _slider-arrow"></div>
+                    </div>
+                </div>
+            </div>
+            @@include("html/_share-block.html", {
+                "class": 'exhibitions__share-block',
+            })
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer-with-popup.html")

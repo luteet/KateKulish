@@ -7,6 +7,7 @@
 @import 'slider';
 @import 'form';
 @import 'page-section';
+@import 'popup';
 
 @import 'main-sections/header';
 
@@ -38,6 +39,14 @@
 
 @import 'pages/nft/nft';
 
-//@import 'pages/';
+@import 'pages/favorites/favorites';
+
+@import 'pages/basket/basket';
+
+@import 'pages/order/order';
+
+@import 'pages/thanks/thanks';
+
+@import 'pages/404/404';
 
 @import 'main-sections/footer';

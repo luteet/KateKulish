@@ -1,3 +1,93 @@
+  
+  // =-=-=-=-=-=-=-=-=-=-=-=- <popup> -=-=-=-=-=-=-=-=-=-=-=-=
+  
+  let popupCheck = true, popupCheckClose = true;
+  function popup(arg) {
+  
+  if (popupCheck) {
+      popupCheck = false;
+  
+      let popup, popupClose,
+  
+          body = document.querySelector('body'),
+          html = document.querySelector('html'),
+          wrapper = document.querySelector('.wrapper'),
+          header = arg.header,
+          duration = (arg.duration) ? arg.duration : 200,
+          id = arg.id;
+  
+      try {
+  
+          popup = document.querySelector(id);
+          popupClose = popup.querySelectorAll('._popup-close');
+  
+      } catch {
+          return false;
+      }
+  
+      function removeFunc(popup, removeClass) {
+  
+          if (popupCheckClose) {
+              popupCheckClose = false;
+  
+              popup.classList.remove('_active');
+              if(wrapper) wrapper.classList.remove('_blur');
+  
+              setTimeout(() => {
+                  popupCheckClose = true;
+              }, duration)
+  
+              if (removeClass) {
+                  if (header) header.classList.remove('_popup-active');
+  
+                  setTimeout(function () {
+  
+                      body.classList.remove('_popup-active');
+                      html.style.setProperty('--popup-padding', '0px');
+  
+                  }, duration)
+              }
+          }
+      }
+  
+      body.classList.remove('_popup-active');
+      html.style.setProperty('--popup-padding', window.innerWidth - body.offsetWidth + 'px');
+      body.classList.add('_popup-active');
+      
+  
+      popup.classList.add('_active');
+      if (header) header.classList.add('_popup-active');
+      if (wrapper) wrapper.classList.add('_blur');
+  
+  
+      setTimeout(function () {
+        popup.classList.add('_active');
+      }, duration);
+  
+  
+      popupClose.forEach(element => {
+          element.addEventListener('click', function () {
+              if (document.querySelectorAll('._popup._active').length <= 1) {
+                  removeFunc(popup, true);
+              } else {
+                  removeFunc(popup, false);
+              }
+              setTimeout(function () {
+                  return false;
+              }, duration)
+          });
+      })
+  
+  
+      setTimeout(() => {
+          popupCheck = true;
+      }, duration);
+  
+  }
+  
+  }
+  
+  // =-=-=-=-=-=-=-=-=-=-=-=- </popup> -=-=-=-=-=-=-=-=-=-=-=-=
 
 let slideUp = (target, duration=500) => {
   target.style.transitionProperty = 'height, margin, padding';
@@ -57,6 +147,41 @@ let slideDown = (target, duration=500) => {
 }
 
 
+function basketPriceCount() {
+  let pricesWrapper = document.querySelectorAll('._basket-price-wrapper');
+
+  pricesWrapper.forEach(thisPriceWrapper => {
+    let priceList = thisPriceWrapper.querySelectorAll('._basket-price'),
+        priceTotal = thisPriceWrapper.querySelector('._basket-price-total'),
+        priceResult = 0;
+
+    for(let index = 0; index < priceList.length; index++) {
+      priceResult += Number(priceList[index].dataset.price);
+    }
+
+    priceTotal.textContent = priceTotal.dataset.currency + priceResult;
+
+  });
+
+}
+
+basketPriceCount();
+
+if(document.querySelector('.painting-product__list')) {
+  let magicGrid = new MagicGrid({
+    container: ".painting-product__list",
+    animate: true,
+    gutter: 20,
+    static: true,
+    useMin: true
+  });
+
+  magicGrid.listen();
+}
+
+
+
+
 const body = document.querySelector('body'),
     html = document.querySelector('html'),
     menu = document.querySelectorAll('._burger, .header__nav, body'),
@@ -66,7 +191,8 @@ const body = document.querySelector('body'),
 
 
 
-let thisTarget, faqSlideCheck = true;
+let thisTarget, faqSlideCheck = true,
+removeProductCheck = true;
 body.addEventListener('click', function (event) {
 
     thisTarget = event.target;
@@ -92,19 +218,21 @@ body.addEventListener('click', function (event) {
     if(likeBtn) {
       event.preventDefault();
 
-      let icon = likeBtn.querySelector('._like-btn-icon._icon-love');
+      likeBtn.classList.toggle('_active');
+
+      /* let icon = likeBtn.querySelector('._like-btn-icon._icon-love');
       if(icon) {
         icon.classList.remove('_icon-love');
         icon.classList.add('_icon-love-active');
 
-        likeBtn.classList.toggle('_liked');
+        likeBtn.classList.toggle('_active');
       } else {
         icon = likeBtn.querySelector('._like-btn-icon._icon-love-active');
         icon.classList.remove('_icon-love-active');
         icon.classList.add('_icon-love');
 
-        likeBtn.classList.toggle('_liked');
-      }
+        
+      } */
       
 
 
@@ -191,19 +319,64 @@ body.addEventListener('click', function (event) {
 
     }
 
+
+
+    let removeProductBtn = thisTarget.closest('._remove-product-btn');
+    if(removeProductBtn && removeProductCheck) {
+      removeProductCheck = false;
+      let removeProduct = removeProductBtn.closest('._remove-product');
+
+      removeProduct.classList.add('_removing');
+      setTimeout(() => {
+        removeProduct.remove();
+        removeProductCheck = true;
+        basketPriceCount();
+        
+        let parent = document.querySelector('.painting-product'),
+            products = parent.querySelectorAll('.painting-product__item');
+
+        if(!products.length) {
+          parent.classList.add('_none');
+        } else {
+          magicGrid.positionItems();
+        }
+
+      },500)
+    }
+
+
+
+    if(thisTarget.closest('_disabled')) {
+      event.preventDefault();
+    }
+
+
+
+    let btnPopup = thisTarget.closest('._open-popup');
+    if(btnPopup) {
+      event.preventDefault();
+    
+      popup({
+        id: btnPopup.getAttribute('href')
+      });
+    
+    }
+
 })
-
-
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
-let gallerySlider = new Swiper('.gallery__slider', {
+let gallerySlider
+if(document.querySelector('.gallery__slider')) {
+  gallerySlider = new Swiper('.gallery__slider', {
   
     spaceBetween: 10,
     slidesPerView: "auto",
     centeredSlides: true,
-
+  
+    watchSlidesProgress: true,
+  
     loop: true,
     loopedSlides: 10,
     pagination: {
@@ -219,37 +392,41 @@ let gallerySlider = new Swiper('.gallery__slider', {
         spaceBetween: 15
       }
     }
+  
+  });
+}
 
-}); 
-
-let nftMarketplaceSlider = new Swiper('.nft-marketplace__slider', {
+let nftMarketplaceSlider
+if(document.querySelector('.nft-marketplace__slider')) {
+  nftMarketplaceSlider = new Swiper('.nft-marketplace__slider', {
     
-  spaceBetween: 30,
-  slidesPerView: 2,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    700: {
-      spaceBetween: 30,
-      slidesPerView: 4
+    spaceBetween: 30,
+    slidesPerView: 2,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-    1250: {
-      spaceBetween: 30,
-      slidesPerView: 5
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
-    1550: {
-      spaceBetween: 30,
-      slidesPerView: 6
+    breakpoints: {
+      700: {
+        spaceBetween: 30,
+        slidesPerView: 4
+      },
+      1250: {
+        spaceBetween: 30,
+        slidesPerView: 5
+      },
+      1550: {
+        spaceBetween: 30,
+        slidesPerView: 6
+      }
     }
-  }
-
-});
+  
+  });
+}
 
 let nftMarketplaceSliderNavigation = document.querySelector('.nft-marketplace__navigation');
 
@@ -257,153 +434,190 @@ if(!document.querySelector('.nft-marketplace__item') && nftMarketplaceSliderNavi
   nftMarketplaceSliderNavigation.classList.add('_disabled');
 }
 
-let exhibitionsSlider = new Swiper('.exhibitions__slider', {
+let exhibitionsSlider
+if(document.querySelector('.exhibitions__slider')) {
+  exhibitionsSlider = new Swiper('.exhibitions__slider', {
     
-  spaceBetween: 20,
-  slidesPerView: 1,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-    500: {
-      spaceBetween: 20,
-      slidesPerView: 2
+    spaceBetween: 20,
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-    1150: {
-      spaceBetween: 21,
-      slidesPerView: 3
-    }
-  }
-
-});
-
-let paintingSliderGallery = new Swiper('.painting__picture-slider-gallery', {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  
-  breakpoints: {
-    768: {
-      direction: "vertical",
-      slidesPerView: 4,
-      spaceBetween: 0,
-    }
-  }
-  
-});
-
-let paintingSliderMain = new Swiper('.painting__picture-slider-main', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "fade",
-  autoHeight: true,
-  navigation: {
-    nextEl: '.swiper-button-next#painting-arrow-next',
-    prevEl: '.swiper-button-prev#painting-arrow-prev',
-},
-  pagination: {
-    el: '.swiper-pagination#painting-pagination',
-    clickable: true,
-  },
-  thumbs: {
-    swiper: paintingSliderGallery,
-  }
-});
-
-let relatedPaintingsSlider = new Swiper('.related-paintings__slider', {
-  spaceBetween: 20,
-  slidesPerView: 1,
-  navigation: {
-      nextEl: '.swiper-button-next#related-paintings-arrow-next',
-      prevEl: '.swiper-button-prev#related-paintings-arrow-prev',
-  },
-  breakpoints: {
-    500: {
-      slidesPerView: 2
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
-    768: {
-      slidesPerView: 3
-    },
-    1250: {
-      slidesPerView: 4
+    breakpoints: {
+      500: {
+        spaceBetween: 20,
+        slidesPerView: 2
+      },
+      1150: {
+        spaceBetween: 21,
+        slidesPerView: 3
+      }
     }
-  }
-})
-
-let spiritualityGallerySlider = new Swiper('.spirituality-page__gallery-slider', {
-  spaceBetween: 9,
-  slidesPerView: 2,
-  navigation: {
-    nextEl: '.swiper-button-next#spirituality-arrow-next',
-    prevEl: '.swiper-button-prev#spirituality-arrow-prev',
-},
-  pagination: {
-    el: '.swiper-pagination#spirituality-pagination',
-    clickable: true,
-  },
   
-  breakpoints: {
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 10,
+  });
+}
+
+let paintingSliderGallery
+if(document.querySelector('.painting__picture-slider-gallery')) {
+  paintingSliderGallery = new Swiper('.painting__picture-slider-gallery', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+  
+    on: {
+      init: function () {
+        document.querySelector('.painting__picture-slider-gallery').classList.add('_init');
+      },
     },
-    1250: {
-      slidesPerView: 8,
-      spaceBetween: 12,
+    
+    breakpoints: {
+      768: {
+        direction: "vertical",
+        slidesPerView: 4,
+        spaceBetween: 0,
+      }
     }
-  }
-})
+    
+  });  
+}
 
-let spiritualitySlider = new Swiper('.spirituality-page__slider', {
-  spaceBetween: 20,
-  slidesPerView: 1,
-  effect: "fade",
-  autoHeight: true,
-  thumbs: {
-    swiper: spiritualityGallerySlider,
+let paintingSliderMain
+if(document.querySelector('.painting__picture-slider-main')) {
+  paintingSliderMain = new Swiper('.painting__picture-slider-main', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    effect: "fade",
+    autoHeight: true,
+    navigation: {
+      nextEl: '.swiper-button-next#painting-arrow-next',
+      prevEl: '.swiper-button-prev#painting-arrow-prev',
   },
-})
-
-let auctionSliderGallery = new Swiper('.auction__painting-slider-gallery', {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  
-  breakpoints: {
-    768: {
-      direction: "vertical",
-      slidesPerView: 3,
-      spaceBetween: 0,
+    pagination: {
+      el: '.swiper-pagination#painting-pagination',
+      clickable: true,
     },
-    992: {
-      direction: "vertical",
-      slidesPerView: 4,
-      spaceBetween: 0,
+    thumbs: {
+      swiper: paintingSliderGallery,
     }
-  }
-  
-});
+  });  
+}
 
-let auctionSliderMain = new Swiper('.auction__painting-slider-main', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "fade",
-  autoHeight: true,
-  navigation: {
-    nextEl: '.swiper-button-next#auction-painting-arrow-next',
-    prevEl: '.swiper-button-prev#auction-painting-arrow-prev',
-},
-  pagination: {
-    el: '.swiper-pagination#auction-painting-pagination',
-    clickable: true,
+let relatedPaintingsSlider
+if(document.querySelector('.related-paintings__slider')) {
+  relatedPaintingsSlider = new Swiper('.related-paintings__slider', {
+    spaceBetween: 20,
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next#related-paintings-arrow-next',
+        prevEl: '.swiper-button-prev#related-paintings-arrow-prev',
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      },
+      1250: {
+        slidesPerView: 4
+      }
+    }
+  })  
+}
+
+let spiritualityGallerySlider
+if(document.querySelector('.spirituality-page__gallery-slider')) {
+  spiritualityGallerySlider = new Swiper('.spirituality-page__gallery-slider', {
+    spaceBetween: 9,
+    slidesPerView: 2,
+    navigation: {
+      nextEl: '.swiper-button-next#spirituality-arrow-next',
+      prevEl: '.swiper-button-prev#spirituality-arrow-prev',
   },
-  thumbs: {
-    swiper: auctionSliderGallery,
-  }
-});
+    pagination: {
+      el: '.swiper-pagination#spirituality-pagination',
+      clickable: true,
+    },
+    
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      1250: {
+        slidesPerView: 8,
+        spaceBetween: 12,
+      }
+    }
+  })  
+}
+
+let spiritualitySlider
+if(document.querySelector('.spirituality-page__slider')) {
+  spiritualitySlider = new Swiper('.spirituality-page__slider', {
+    spaceBetween: 20,
+    slidesPerView: 1,
+    effect: "fade",
+    autoHeight: true,
+    thumbs: {
+      swiper: spiritualityGallerySlider,
+    },
+  })  
+}
+
+let auctionSliderGallery
+if(document.querySelector('.auction__painting-slider-gallery')) {
+  auctionSliderGallery = new Swiper('.auction__painting-slider-gallery', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+  
+    on: {
+      init: function () {
+        document.querySelector('.auction__painting-slider-gallery').classList.add('_init');
+      },
+    },
+    
+    breakpoints: {
+      768: {
+        direction: "vertical",
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+      992: {
+        direction: "vertical",
+        slidesPerView: 4,
+        spaceBetween: 0,
+      }
+    }
+    
+  });  
+}
+
+let auctionSliderMain;
+if(document.querySelector('.auction__painting-slider-main')) {
+  auctionSliderMain = new Swiper('.auction__painting-slider-main', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    effect: "fade",
+    autoHeight: true,
+    navigation: {
+      nextEl: '.swiper-button-next#auction-painting-arrow-next',
+      prevEl: '.swiper-button-prev#auction-painting-arrow-prev',
+  },
+    pagination: {
+      el: '.swiper-pagination#auction-painting-pagination',
+      clickable: true,
+    },
+    thumbs: {
+      swiper: auctionSliderGallery,
+    }
+  });  
+}
+
 
 window.onload = function() {
   if(paintingSliderMain) paintingSliderMain.update();
@@ -476,7 +690,6 @@ if(document.querySelectorAll('.timer').length) {
     timer();
   },1000)
 }
-
 
 /* function getCoords(elem) {
   var box = elem.getBoundingClientRect();

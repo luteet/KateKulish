@@ -1,0 +1,43 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'Favorites',
+})
+
+<main class="main">
+    <section class="favorites page-section">
+        <div class="favorites__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/favorites/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/favorites/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/favorites/header-bg-mob.webp" type="image/webp">
+                    <img src="img/favorites/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <div class="page-section__header--container _container">
+                <h1 class="page-section__header--main-title _page-title">
+                    Favorites
+                </h1>
+            </div>
+        </div>
+        <div class="favorites__content _page-section-padding">
+            <div class="favorites__content--container _container painting-product">
+                <ul class="painting-product__list">
+                    @@loop("html/favorites/_favorites-item.html", [
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                    ])
+                </ul>
+                @@include("html/_page-pagination.html", {
+                    "class": 'favorites__content--pagination'
+                })
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

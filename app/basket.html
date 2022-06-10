@@ -1,0 +1,49 @@
+@@include("html/_header-page-address.html", {
+    "link-1": 'Home',
+    "link-2": 'Basket',
+})
+
+<main class="main">
+    <section class="basket page-section">
+        <div class="basket__header page-section__header">
+            <div class="page-section__header--bg">
+                <picture>
+                    <source srcset="img/basket/header-bg.webp" type="image/webp" media="(min-width: 992px)">
+                    <source srcset="img/basket/header-bg-table.webp" type="image/webp" media="(min-width: 400px)">
+                    <source srcset="img/basket/header-bg-mob.webp" type="image/webp">
+                    <img src="img/basket/header-bg.png" alt="" width="0" height="0" class="page-section__header--bg-img">
+                </picture>
+            </div>
+            <div class="page-section__header--container _container">
+                <h1 class="page-section__header--main-title _page-title">
+                    Basket
+                </h1>
+            </div>
+        </div>
+        <div class="basket__content _page-section-padding">
+            <form action="#" class="basket__content--container _container painting-product _basket-price-wrapper">
+                <ul class="painting-product__list">
+                    @@loop("html/basket/_basket-item.html", [
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                        {"image": "4"},
+                    ])
+                </ul>
+                <div class="basket__result">
+                    <strong class="basket__total">
+                        Total: 
+                        <span class="basket__total--value _basket-price-total" data-currency="$">$780</span>
+                    </strong>
+                    <button class="basket__result--submit _btn _light _min" type="submit">
+                        make a purchase
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

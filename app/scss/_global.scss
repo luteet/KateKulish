@@ -15,7 +15,7 @@ body {
 
     min-height: 100%;
 
-    //padding-right: var(--popup-padding);
+    padding-right: var(--popup-padding);
 
     &._active {
         overflow: hidden;
@@ -37,6 +37,13 @@ body {
     flex-direction: column;
 
     min-height: 100%;
+
+    filter: blur(0px);
+    transition: filter .2s ease-in-out;
+
+    &._blur {
+        filter: blur(15px);
+    }
     //padding-top: var(--header-height);
 }
 
@@ -156,6 +163,16 @@ body {
     background: var(--accent);
     color: var(--white);
 
+    &._light {
+        background: var(--white);
+        color: var(--accent);
+    }
+
+    &._disabled {
+        background: var(--disabled);
+        color: var(--white);
+    }
+
     font-weight: 600;
     font-size: 1rem;
     line-height: 150%;
@@ -214,11 +231,23 @@ body {
     &:hover {
         background: var(--accent);
         box-shadow: var(--accent-shadow);
+        color: var(--white);
+
+        &._disabled {
+            background: var(--disabled);
+            color: var(--white);
+            box-shadow: none;
+        }
     }
 
     &:active {
         background: var(--accent-dark);
         box-shadow: none;
+
+        &._disabled {
+            background: var(--disabled);
+            box-shadow: none;
+        }
     }
 }
 
@@ -356,11 +385,19 @@ body {
     padding: 7px;
     @include _768 {
         padding: 20px 18px;
+
+        &._min {
+            padding: 8px;
+        }
     }
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &._end {
+        justify-content: flex-end;
+    }
 
     &__status {
 
@@ -405,6 +442,21 @@ body {
         line-height: 100%;
         color: var(--white);
 
+        transition: background .2s ease-in-out, color .2s ease-in-out;
+
+        &._active {
+            color: var(--accent);
+            background: var(--white);
+        }
+
+        &._active &--icon {
+            opacity: 0;
+        }
+
+        &._active &--icon-active {
+            opacity: 1;
+        }
+
         width: 37px; height: 37px;
         @include _768 {
             font-size: 1.5rem;
@@ -412,8 +464,29 @@ body {
         }
 
         border-radius: 50%;
-        &--icon {
 
+        &--icon {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+            transition: opacity .2s ease-in-out;
+        }
+
+        &--icon-active {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+    }
+
+    &._min &__like-btn {
+        
+        @include _768 {
+            font-size: 1rem;
+            width: 37px; height: 37px;
         }
     }
 }
@@ -744,5 +817,14 @@ body {
     }
 }
 
+._underline {
+    text-decoration: underline;
+}
 
+._full-page {
+    min-height: 100vh;
+    
+    display: flex;
+    align-items: center;
 
+}

@@ -1,0 +1,111 @@
+@@include("html/_header.html")
+
+<main class="main">
+    <section class="order">
+        <div class="order__container _container">
+            <div class="order__header">
+                <h2 class="order__title _title _large _txt-center">
+                    Order
+                </h2>
+                <div class="order__status">
+                    <div class="order__status-item _active">
+                        <div class="order__status-item--body">
+                            <div class="order__status-item--number">
+                                1
+                            </div>
+                            <h3 class="order__status-item--title">
+                                Contact details
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="order__status-item _active">
+                        <div class="order__status-item--body">
+                            <div class="order__status-item--number">
+                                2
+                            </div>
+                            <h3 class="order__status-item--title">
+                                Payment method
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="#" class="order__main">
+                <div class="order__user-info">
+                    <fieldset class="order__user-info--fieldset">
+                        <h3 class="order__user-info--title _title _min-bold">
+                            Payment method
+                        </h3>
+                        <h3 class="order__user-info--subtitle _subtitle">
+                            Online payment via:
+                        </h3>
+                        <div class="order__user-info--payment-row">
+                            <div class="order__user-info--checkbox checkbox _large">
+                                <input type="checkbox" name="payment-1" id="payment-1" class="checkbox__input">
+                                <label for="payment-1" class="checkbox__label">
+                                    <div class="order__user-info--payment-elem">
+                                        <picture>
+                                            <source srcset="img/payment/logo-1.webp" type="image/webp">
+                                            <img src="img/payment/logo-1.png" alt="" width="50" class="order__user-info--payment-elem-logo">
+                                        </picture>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="order__user-info--text">
+                            <p>
+                                All payments are collected and protected by PayPal. Also, you will be able to use all credit or debit cards to pay for your purchase in the next step
+                            </p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="order__aside">
+                    <div class="order__aside--body _border">
+                        <div class="order__aside--header">
+                            <h2 class="order__aside--title">
+                                Order list
+                            </h2>
+                        </div>
+                        <ul class="order__aside--list">
+                            <li class="order__aside--item">
+                                <div class="order__aside--item-picture">
+                                    <picture>
+                                        <source srcset="img/painting/image-1-min.webp" type="image/webp">
+                                        <img src="img/painting/image-1-min.jpg" alt="" width="90" class="order__aside--item-img">
+                                    </picture>
+                                </div>
+                                <div class="order__aside--item-info">
+                                    <h3 class="order__aside--item-name">
+                                        Name of the painting
+                                    </h3>
+                                    <strong class="order__aside--item-price">390.00 USD</strong>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="order__aside--row">
+                            <h3 class="order__aside--row-title">
+                                Total:
+                            </h3>
+                            <span class="order__aside--row-name">Cost of 1 item:</span>
+                            <strong class="order__aside--row-price">390.00 USD</strong>
+                        </div>
+                        <div class="order__aside--row">
+                            <span class="order__aside--row-name">Total:</span>
+                            <strong class="order__aside--row-price">390.00 USD</strong>
+                        </div>
+                        <button class="order__aside--submit _btn" type="submit">
+                            Order
+                        </button>
+                        <div class="order__aside--text">
+                            <p>
+                                By confirming the order, I accept the terms of the Public Offer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+@@include("html/_footer.html")

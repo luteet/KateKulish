@@ -1,0 +1,248 @@
+._popup {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+
+    z-index: 100;
+
+    opacity: 0; visibility: hidden;
+
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+
+    will-change: opacity;
+    &._active {
+        opacity: 1; visibility: visible;
+    }
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        min-height: 100%; width: 100%;
+
+        z-index: 2;
+    }
+    &-bg {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: var(--black);
+
+        opacity: .7;
+
+    }
+    &-body {
+        margin: auto;
+        position: relative;
+        background-color: var(--white);
+        
+        overflow-y: auto;
+        max-height: calc(100vh - 30px);
+        width: 100%;
+
+        max-width: 1194px;
+
+        padding: 70px 20px 20px 20px;
+        
+        @include _768 {
+            padding: 70px 30px 30px 30px;
+        }
+
+        @include _992 {
+            padding: 90px 62px 62px 62px;
+        }
+
+        z-index: 2;
+    }
+    &-close-btn {
+        position: absolute;
+        right: 10px; top: 10px;
+        line-height: 100%;
+
+        width: 44px; height: 44px;
+
+        @include _768 {
+            width: 48px; height: 48px;
+        }
+
+        @include _992 {
+            width: 55px; height: 55px;
+            right: 20px; top: 20px;
+        }
+        
+        
+        font-size: 120%;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        color: var(--dark-2);
+        background: var(--light);
+        transition: color .2s ease-in-out;
+
+        &:hover {
+            color: var(--accent);
+        }
+    }
+}
+
+.recive-popup {
+
+    // .recive-popup__wrapper
+
+    &__wrapper {
+    }
+
+    // .recive-popup__bg
+
+    &__bg {
+    }
+
+    // .recive-popup__body
+
+    &__body {
+        
+    }
+
+    // .recive-popup__close-btn
+
+    &__close-btn {
+        
+        // .recive-popup__close-btn--icon
+
+        &--icon {
+
+        }
+    }
+
+    // .recive-popup__text
+
+    &__text {
+        
+        font-weight: 600;
+        font-size: 0.8125rem;
+        line-height: 133%;
+        color: var(--dark-2);
+
+        @include _768 {
+            font-size: 1.375rem;
+        }
+        
+        @include _992 {
+            font-size: 1.875rem;
+            padding: 0 30px;
+        }
+        
+    }
+
+    // .recive-popup__form
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        position: relative;
+
+        margin: 10px 10px 0 10px;
+
+        @include _768 {
+            text-align: left;
+            flex-direction: row;
+            align-items: stretch;
+            margin: 10px 30px 0 30px;
+        }
+
+        @include _992 {
+            margin: 32px 150px 0 150px;
+        }
+        // .recive-popup__form--name
+
+        &--name {
+            display: block;
+
+            font-size: 1rem;
+
+            @include _768 {
+                font-size: 1.125rem;
+            }
+        }
+
+        // .recive-popup__form--input
+
+        &--input {
+            border: 1px solid var(--light-2);
+            font-size: 0.875rem;
+
+            padding: 8px; margin-top: 3px;
+
+            text-align: center;
+            min-height: 44px;
+
+            @include _768 {
+                text-align: left;
+                min-height: 60px;
+                padding: 10px 183px 10px 10px;
+                
+            }
+            
+            @include _992 {
+                min-height: 70px;
+                padding: 10px 183px 10px 10px;
+            }
+
+            
+
+            width: 100%;
+        }
+
+        // .recive-popup__form--submit
+
+        &--submit {
+            position: static;
+
+            min-width: 118px;
+
+            font-size: 1rem;
+            min-height: 44px; margin-top: 15px;
+
+            @include _768 {
+                position: absolute;
+                right: 5px; bottom: 5px;
+
+                margin-top: 0;
+
+                font-size: 1.25rem;
+                min-height: 50px;
+
+                min-width: 135px;
+            }
+
+            @include _992 {
+                min-height: 60px;
+                padding: 10px;
+
+                min-width: 163px;
+            }
+            
+        }
+    }
+
+    // .recive-popup__label
+
+    &__label {
+        width: 100%;
+
+        
+        
+    }
+}
+
+

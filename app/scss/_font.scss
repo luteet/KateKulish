@@ -54,6 +54,7 @@
 
     @include _992 {
         font-size: 6.25rem;
+        
     }
 
     @media(min-width: 1440px) {
@@ -87,6 +88,7 @@
     }
     
     &._large {
+        
         font-weight: 600;
         font-size: 2rem;
 
@@ -96,6 +98,19 @@
         
         @include _992 {
             font-size: 3.4375rem;
+        }
+    }
+
+    &._min-bold {
+        font-weight: 600;
+        font-size: 1rem;
+
+        @include _768 {
+            font-size: 1.875rem;
+        }
+        
+        @include _992 {
+            font-size: 1.875rem;
         }
     }
 
@@ -175,4 +190,17 @@
 
 ._txt-center {
     text-align: center;
+}
+
+._subtitle {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 150%;
+    color: var(--dark-2);
+    line-height: 160%;
+
+    @include _768 {
+        font-size: 1.25rem;
+    }
+    
 }
