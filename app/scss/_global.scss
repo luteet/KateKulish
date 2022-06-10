@@ -42,7 +42,10 @@ body {
     transition: filter .2s ease-in-out;
 
     &._blur {
-        filter: blur(15px);
+        filter: blur(5px);
+        @include _768 {
+            filter: blur(15px);
+        }
     }
     //padding-top: var(--header-height);
 }

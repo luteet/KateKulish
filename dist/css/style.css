@@ -1477,8 +1477,8 @@ body._popup-active {
 }
 
 .wrapper._blur {
-  -webkit-filter: blur(15px);
-          filter: blur(15px);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .main {
@@ -2396,7 +2396,7 @@ body._popup-active {
 }
 
 .page-section__header--main-title {
-  padding: 7vw 0;
+  padding: 10vw 0;
 }
 
 .page-section__header--container {
@@ -2618,11 +2618,16 @@ body._popup-active {
   position: sticky;
   left: 0;
   top: 0;
+  opacity: 1;
+  visibility: visible;
   width: 100%;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
   z-index: 99;
+}
+
+.header._hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .header__row {
@@ -4878,6 +4883,7 @@ body._popup-active {
   justify-content: center;
   width: 21px;
   height: 21px;
+  flex: 0 0 21px;
   border-radius: 50%;
   border: 1px solid var(--dark);
   background: var(--white);
@@ -5228,7 +5234,7 @@ body._popup-active {
 }
 
 .painting-product__item {
-  width: 100%;
+  width: calc(100% - 15px);
 }
 
 .painting-product__item._removing .painting-product__item--body {
@@ -5936,6 +5942,10 @@ body._popup-active {
     padding-top: 25%;
   }
 
+  .page-section__header--main-title {
+    padding: 7vw 0;
+  }
+
   .faq-page__content {
     padding: 40px 0 40px 0;
   }
@@ -6024,6 +6034,11 @@ body._popup-active {
 }
 
 @media (min-width: 768px) {
+  .wrapper._blur {
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+  }
+
   ._burger {
     margin-left: 15px;
   }
@@ -6999,10 +7014,6 @@ body._popup-active {
     padding-top: 40px;
   }
 
-  .painting-product__item {
-    width: 100%;
-  }
-
   .painting-product__item--body {
     flex-direction: row;
     padding: 9px 9px 13px 9px;
@@ -7284,6 +7295,11 @@ body._popup-active {
 
   .header {
     position: static;
+  }
+
+  .header._hide {
+    opacity: 1;
+    visibility: visible;
   }
 
   .header__nav {

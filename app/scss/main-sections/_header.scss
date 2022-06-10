@@ -3,7 +3,18 @@
     left: 0; top: 0;
     @include _992 {
         position: static;
+
+        &._hide {
+            opacity: 1; visibility: visible;
+        }
     }
+
+    opacity: 1; visibility: visible;
+
+    &._hide {
+        opacity: 0; visibility: hidden;
+    }
+
     width: 100%;
 
     //padding-right: var(--popup-padding) !important;
@@ -11,7 +22,7 @@
     //transform: translate(0, var(--pos));
     
 
-    transition: transform .2s ease-in-out;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
 
     z-index: 99;
 

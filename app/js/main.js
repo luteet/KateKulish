@@ -182,6 +182,7 @@ if(document.querySelector('.painting-product__list')) {
 
 
 
+
 const body = document.querySelector('body'),
     html = document.querySelector('html'),
     menu = document.querySelectorAll('._burger, .header__nav, body'),
@@ -622,6 +623,10 @@ window.onload = function() {
   if(paintingSliderMain) paintingSliderMain.update();
   if(spiritualitySlider) spiritualitySlider.update();
   if(auctionSliderMain) auctionSliderMain.update();
+
+  if(magicGrid && document.querySelector('.painting-product__item')) {
+    magicGrid.positionItems();
+  }
 }
 
 
@@ -680,4 +685,91 @@ if(document.querySelectorAll('.timer').length) {
     timer();
   },1000)
 }
+
+
+function headerScroll(arg) {
+
+  function getCoords(elem) {
+      var box = elem.getBoundingClientRect();
+  
+      return {
+      top: box.top + pageYOffset,
+      left: box.left + pageXOffset
+      };
+  
+  }
+
+  let header = document.querySelector('.header'),
+
+      hToDown = 150,
+      hToUp = 50,
+
+      headerPos = getCoords(header),
+
+      hPosToDown, hPosToUp, hCheck = [true, true], hPosCheck = false,
+      hTopCheck = false, scrolled = [0, 0], checkScrolled = '';
+
+
+function headerScrollFunc() {
+  
+  scrolled[0] = headerPos.top
+  headerPos = getCoords(header);
+  scrolled[1] = headerPos.top
+  
+      if (!hPosCheck) {
+
+          hPosCheck = true;
+
+          hPosToDown = headerPos.top + hToDown;
+          hPosToUp = headerPos.top - hToUp;
+
+      }
+
+      if (scrolled[0] > scrolled[1]) {
+        
+          checkScrolled = 'up';
+        
+        } else if (scrolled[0] < scrolled[1]) {
+          
+          checkScrolled = 'down';
+          
+        }
+
+        if (!hTopCheck && headerPos.top > 0) {
+          hTopCheck = true;
+      
+          header.classList.remove('_top');
+        } else if (headerPos.top == 0) {
+          hTopCheck = false;
+          header.classList.add('_top');
+        }
+      
+      
+        if (checkScrolled == 'down') hPosToUp = headerPos.top - hToUp;
+        if (checkScrolled == 'up') hPosToDown = headerPos.top + hToDown;
+      
+      
+        if (hPosToUp >= headerPos.top && hCheck[0]) {
+          hCheck[0] = false; hCheck[1] = true;
+      
+          header.classList.remove('_hide'); // SHOW HEADER
+        }
+      
+        if (hPosToDown <= headerPos.top && hCheck[1]) {
+          hCheck[1] = false; hCheck[0] = true;
+      
+          header.classList.add('_hide'); // HIDE HEADER
+        }
+
+}
+
+headerScrollFunc();
+
+window.onscroll = headerScrollFunc;
+
+}
+
+
+headerScroll();
+
 

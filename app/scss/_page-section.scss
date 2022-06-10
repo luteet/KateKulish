@@ -34,7 +34,10 @@
         // .page-section__header--main-title
 
         &--main-title {
-            padding: 7vw 0;
+            padding: 10vw 0;
+            @media(min-width: 400px) {
+                padding: 7vw 0;
+            }
             @include _992 {
                 padding: 2vw 0;
             }

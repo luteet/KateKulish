@@ -45,11 +45,7 @@
     // .painting-product__item
 
     &__item {
-        width: 100%;
-
-        @include _768 {
-            width: 100%;
-        }
+        width: calc(100% - 15px);
 
         @include _992 {
             width: calc(50% - 20px);
