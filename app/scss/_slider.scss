@@ -24,16 +24,23 @@
     align-items: center;
     justify-content: center;
 
-    width: 30px; height: 30px;
-
+    width: 37px; height: 37px;
     
+    @include _992 {
+        width: 30px; height: 30px;
+    }
 
     &.swiper-button-disabled {
         opacity: 1;
     }
 
     &::after {
-        font-size: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        @include _992 {
+            font-size: 10px;
+            font-weight: 400;
+        }
         color: var(--accent);
     }
 }
@@ -46,10 +53,14 @@
 
     & .swiper-pagination-bullet {
 
-        width: 8px; height: 8px;
+        width: 10px; height: 10px;
         background: transparent;
         border: 1px solid transparent;
-        margin: 0 3px !important;
+        margin: 0 4px !important;
+        @include _992 {
+            width: 8px; height: 8px;
+            margin: 0 3px !important;
+        }
 
         transition: border .2s ease-in-out;
         opacity: 1;
@@ -76,7 +87,10 @@
         &::after {
             content: '';
             display: block;
-            width: 10px; height: 10px;
+            width: 13px; height: 13px;
+            @include _992 {
+                width: 10px; height: 10px;
+            }
             position: absolute;
             left: 50%; top: 50%;
             transform: translate(-50%,-50%);
@@ -105,13 +119,16 @@
         opacity: 1;
 
         position: relative;
+
         &.swiper-pagination-bullet-active {
             
             border: 1px solid var(--accent);
             &::before {
                 background: var(--accent);
             }
+
         }
+
         &::before {
             content: '';
             position: absolute;

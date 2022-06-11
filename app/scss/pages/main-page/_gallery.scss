@@ -44,7 +44,7 @@
     &__item {
         height: auto;
 
-        width: 50%;
+        width: 55%;
 
         @media(min-width: 1100px) {
             width: 40%;
@@ -54,7 +54,7 @@
             width: 26%;
         }
         &._large {
-            width: 70%;
+            width: 65%;
             @media(min-width: 1100px) {
                 width: 50%;
             }
@@ -78,13 +78,21 @@
         }
 
         &.swiper-slide-active {
-            transform: scale(1) translate(0,7%) !important;
+
+            transform: scale(1) translate(0,0%) !important;
+
+            @include _992 {
+                transform: scale(1) translate(0,7%) !important;
+            }
         }
 
         &.swiper-slide-active &--info {
             &::before {
                 top: 14px;
                 @include _768 {
+                    top: 17px;
+                }
+                @include _992 {
                     top: 40px;
                 }
             }
@@ -175,7 +183,7 @@
 
             padding-top: 20px;
             @include _768 {
-                padding-top: 78px;
+                padding-top: 30px;
             }
 
             text-align: center;
@@ -184,6 +192,7 @@
             line-height: 135%;
             @include _992 {
                 font-size: 1.25rem;
+                padding-top: 78px;
             }
 
             transition: padding .2s ease-in-out;
@@ -192,12 +201,15 @@
             &::before {
                 content: '';
                 position: absolute;
-                left: 50%; top: 10px;
+                left: 50%; top: 0px;
                 transform: translate(-50%,-50%);
                 background: var(--black);
                 height: 9px; width: 1px;
                 @include _768 {
-                    height: 23px; top: 30px;
+                    height: 14px; top: 17px;
+                }
+                @include _992 {
+                    top: 40px; height: 23px;
                 }
                 transition: top .2s ease-in-out;
             }
@@ -239,16 +251,26 @@
 
             font-weight: 600;
             text-transform: uppercase;
+            
             color: var(--accent);
+            transition: color .2s ease-in-out;
+
+            &:hover {
+                color: var(--accent-light);
+            }
+
+            &:active {
+                color: var(--accent-dark);
+            }
         }
     }
 
     // .gallery__navigation
 
     &__navigation {
-        padding-top: 55px;
+        padding-top: 25px;
         @include _768 {
-            padding-top: 65px;
+            padding-top: 20px;
         }
         @include _992 {
             padding-top: 85px;

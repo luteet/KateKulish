@@ -7,12 +7,12 @@
         grid-area: 1/1;
         position: relative;
 
-        padding-top: 175%;
+        padding-top: 185%;
 
         margin-top: -5vw;
         @media(min-width: 500px) {
-            margin-top: -25vw;
-            padding-top: 130%;
+            margin-top: -38vw;
+            padding-top: 134%;
         }
 
         @include _768 {
@@ -21,8 +21,8 @@
         }
 
         @media(min-width: 1250px) {
-            margin-top: -23vw;
-            padding-top: 80%;
+            margin-top: -27vw;
+            padding-top: 83%;
         }
 
         @media(min-width: 1700px) {
@@ -39,8 +39,33 @@
             
             position: absolute;
             left: 50%; top: 0;
-            transform: translate(-50%,0);
-            width: 100%; height: auto;
+            transform: translate(-48%,0);
+            width: 105%; height: auto;
+
+            @media(min-width: 500px) {
+                width: 115%;
+                transform: translate(-47%,0);
+            }
+
+            @include _768 {
+                width: 105%;
+                transform: translate(-48%,0);
+            }
+
+            @include _992 {
+                width: 100%;
+                transform: translate(-50%,0);
+            }
+
+            @media(min-width: 1250px) {
+                width: 110%;
+                transform: translate(-47%,0);
+            }
+
+            @media(min-width: 1700px) {
+                width: 100%;
+                transform: translate(-50%,0);
+            }
 
             z-index: -1;
         }
@@ -51,6 +76,9 @@
     &__container {
         grid-area: 1/1;
         align-self: center;
+
+        position: relative;
+        z-index: 2;
         /* @media(min-width: 500px) {
             padding-top: 150px;
         } */
@@ -64,6 +92,9 @@
     &__section-title {
         line-height: 100%;
         grid-area: 1/1;
+
+        /* position: relative;
+        z-index: 2; */
     }
 
     &__info {

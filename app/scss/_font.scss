@@ -18,10 +18,12 @@
 
     @include _768 {
         font-size: 5.625rem;
+        line-height: 95%;
         -webkit-text-stroke: 2px var(--black);
     }
 
     @include _992 {
+        line-height: 88%;
         font-size: 8rem;
     }
 

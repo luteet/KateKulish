@@ -35,11 +35,18 @@
     // .painting-product__list
 
     &._none &__list {
-        height: auto !important;
+        height: 0 !important;
     }
 
     &__list {
         margin: 0 -10px;
+
+        opacity: 0;
+        transition: opacity .2s ease-in-out, height .2s ease-in-out;
+
+        &._init {
+            opacity: 1;
+        }
     }
 
     // .painting-product__item
@@ -64,6 +71,8 @@
             display: flex;
             flex-direction: column;
             padding: 12px 12px 17px 12px;
+            
+            border: 3px solid var(--dark-2);
 
             @include _768 {
                 flex-direction: row;

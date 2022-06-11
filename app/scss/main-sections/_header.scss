@@ -31,10 +31,21 @@
     }
     
     &__logo {
+
         max-width: 200px;
+
+        @include _768 {
+            max-width: 265px;
+        }
+        
+        @include _992 {
+            max-width: 200px;
+        }
+        
         @media(min-width: 1440px) {
             max-width: 283px;
         }
+
         padding: 10px 0;
 
         transition: max-width .2s ease-in-out;
@@ -56,23 +67,26 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        //flex-wrap: wrap;
         align-items: center;
 
         min-height: 60px;
         @include _768 {
+            min-height: 71px;
+        }
+        
+        @include _992 {
             min-height: 81px;
         }
 
-        transition: min-height .2s ease-in-out;
+        //transition: min-height .2s ease-in-out;
     }
 
-    &._active &__container {
+    /* &._active &__container {
         min-height: 60px;
         @include _768 {
             min-height: 60px;
         }
-    }
+    } */
 
     &__nav {
         position: absolute;
@@ -124,6 +138,7 @@
             overflow: auto; height: 100vh;
 
             width: 75vw; min-height: 100%;
+            min-width: 270px;
 
             @media(min-width: 500px) {
                 width: 374px;
@@ -289,7 +304,7 @@
                     color: var(--dark);
 
                     &:hover {
-                        background: var(--white-0-5);
+                        background: var(--accent);
                     }
                 }
 
@@ -366,7 +381,7 @@
                 transition: color .2s ease-in-out, background .2s ease-in-out;
 
                 &:hover {
-                    background: var(--white-0-5);
+                    background: var(--accent);
                     color: var(--white);
                 }
 

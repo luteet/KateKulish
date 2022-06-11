@@ -178,6 +178,14 @@ if(document.querySelector('.painting-product__list')) {
   });
 
   magicGrid.listen();
+
+  if(magicGrid.container) {
+    setTimeout(() => {
+      magicGrid.container.classList.add('_init');
+    },200)
+  }
+
+  
 }
 
 
@@ -407,6 +415,9 @@ if(document.querySelector('.nft-marketplace__slider')) {
       el: '.swiper-pagination',
       clickable: true,
     },
+
+    watchSlidesProgress: true,
+
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
