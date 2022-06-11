@@ -174,7 +174,16 @@
     border: 1px solid var(--accent);
     background: var(--accent);
 
-    transition: background .2s ease;
+    transition: background .2s ease, box-shadow .2s ease;
+
+    &:hover {
+        box-shadow: 0px 12px 35px rgba(44, 35, 172, 0.55);
+    }
+
+    &:active {
+        background: var(--accent-dark);
+        box-shadow: none;
+    }
 
     &::after {
         font-size: 0.75rem;
@@ -188,6 +197,14 @@
         background: transparent;
         &::after {
             color: var(--accent);
+        }
+
+        &:hover {
+            box-shadow: none;
+        }
+    
+        &:active {
+            background: transparent;
         }
     }
     
@@ -208,13 +225,30 @@
     background: var(--accent);
     color: var(--white);
 
-    transition: color .2s ease-in-out, background .2s ease-in-out;
+    &:hover {
+        box-shadow: 0px 12px 35px rgba(44, 35, 172, 0.55);
+    }
+
+    &:active {
+        background: var(--accent-dark);
+        box-shadow: none;
+    }
+
+    transition: color .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
     
     &.swiper-button-disabled {
         opacity: 1;
         color: var(--accent);
         background: var(--white);
         z-index: 10;
+
+        &:hover {
+            box-shadow: none;
+        }
+    
+        &:active {
+            background: transparent;
+        }
     }
 
     &::after {
@@ -223,4 +257,6 @@
             font-size: 20px;
         }
     }
+
+   
 }
