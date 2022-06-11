@@ -3357,6 +3357,7 @@ body._popup-active {
   -ms-grid-column: 1;
   grid-area: 1/1;
   position: relative;
+  z-index: -1;
   padding-top: 185%;
   margin-top: -5vw;
 }
