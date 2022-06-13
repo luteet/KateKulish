@@ -79,15 +79,15 @@ $containerLarge: 1860 + ($containerPadding * 2);
 }
 
 @font-face {
-    font-family: 'Kate-Kulish-icons';
-    src:
-      url('Kate-Kulish-icons.ttf?ik5pdl') format('truetype'),
-      url('Kate-Kulish-icons.woff?ik5pdl') format('woff'),
-      url('Kate-Kulish-icons.svg?ik5pdl#Kate-Kulish-icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
+  font-family: 'Kate-Kulish-icons';
+  src:
+    url('Kate-Kulish-icons.ttf?ufg5zj') format('truetype'),
+    url('Kate-Kulish-icons.woff?ufg5zj') format('woff'),
+    url('Kate-Kulish-icons.svg?ufg5zj#Kate-Kulish-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
   
   [class^="_icon-"], [class*=" _icon-"] {
     font-family: 'Kate-Kulish-icons' !important;
@@ -147,4 +147,6 @@ $containerLarge: 1860 + ($containerPadding * 2);
   ._icon-shopping-bag::before {
     content: "\e90e";
   }
-  
+  ._icon-shopping-cart:before {
+    content: "\e90f";
+  }
