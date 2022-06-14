@@ -299,6 +299,9 @@
             &._alt {
                 color: var(--white);
                 background: var(--dark);
+
+                
+
                 @include _992 {
                     background: var(--white);
                     color: var(--dark);
@@ -353,6 +356,28 @@
             
         }
 
+        &--cart-count {
+            position: absolute;
+            right: 0; top: 0;
+
+            width: 23px; height: 23px;
+
+            transform: translate(30%,-30%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--accent);
+
+            font-family: var(--main-font);
+            color: var(--white);
+            font-size: 0.8125rem;
+            line-height: 100%;
+
+            border-radius: 50%;
+        }
+
         &--social-link {
             color: var(--white);
 
@@ -377,6 +402,29 @@
             &._alt {
                 background: var(--white);
                 color: var(--dark);
+
+                position: relative;
+                /* &::after {
+                    content: attr(data-count);
+
+                    position: absolute;
+                    right: 0; top: 0;
+                    background: var(--accent);
+
+                    font-family: var(--main-font);
+                    color: var(--white);
+                    font-size: 0.8125rem;
+                    line-height: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 23px; height: 23px;
+
+                    border-radius: 50%;
+
+                } */
 
                 transition: color .2s ease-in-out, background .2s ease-in-out;
 

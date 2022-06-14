@@ -783,4 +783,13 @@ window.onscroll = headerScrollFunc;
 
 headerScroll();
 
+let scrollbarWidth = 0;
+scrollbarWidth = window.innerWidth - body.offsetWidth;
+
+if(fsLightboxInstances['gallery']) {
+  fsLightboxInstances['gallery'].props.onOpen = () => html.style.setProperty('--popup-padding', scrollbarWidth + 'px');
+  fsLightboxInstances['gallery'].props.onClose = () => html.style.setProperty('--popup-padding', 0 + 'px'); scrollbarWidth = window.innerWidth - body.offsetWidth;
+}
+
+
 

@@ -1,0 +1,32 @@
+.policy {
+
+    // .policy__container
+
+    &__container {
+        max-width: 800px;
+    }
+
+    // .policy__main-title
+
+    &__main-title {
+    }
+
+    // .policy__content
+
+    &__content {
+        margin-top: -10px;
+        
+        color: var(--dark-2);
+        font-size: 0.875rem;
+        line-height: 150%;
+
+        @include _768 {
+            font-size: 1rem;
+        }
+
+        & p {
+            padding: 10px 0;
+        }
+    }
+}
+

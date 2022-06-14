@@ -721,6 +721,10 @@ body {
 .payment-min {
     width: 100%;
 
+    &._light &__item {
+        background: var(--white);
+    }
+
     &__list {
         display: flex;
         flex-wrap: wrap;
