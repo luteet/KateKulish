@@ -3760,7 +3760,7 @@ body._popup-active {
   width: 100%;
   /* padding-top: 84%; */
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .painting__picture-slider-main--slide-body {
@@ -4919,7 +4919,7 @@ body._popup-active {
   width: 100%;
   /* padding-top: 84%; */
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .auction__painting-slider-main--slide-body {
